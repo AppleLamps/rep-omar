@@ -41,14 +41,14 @@ export default function Navigation({ activeSection, scrollProgress }: Navigation
       <nav className="fixed top-1 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <span className="font-display font-bold text-xl text-slate-900">Follow The Money</span>
-              <span className="text-slate-500 text-sm ml-2">by <a href="https://x.com/lamps_apple" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 hover:underline">Apple Lamps</a></span>
+              <span className="font-display font-bold text-base sm:text-xl text-slate-900 whitespace-nowrap">Follow The Money</span>
+              <span className="text-slate-500 text-xs sm:text-sm whitespace-nowrap">by <a href="https://x.com/lamps_apple" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 hover:underline">Apple Lamps</a></span>
             </div>
 
             {/* Desktop Navigation */}
