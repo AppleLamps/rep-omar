@@ -1,8 +1,8 @@
 const stats = [
-  { value: "3,500%", label: "Asset Value Increase" },
-  { value: "$25M+", label: "Reported Valuation" },
-  { value: "4+", label: "Active Litigations" },
-  { value: "$60B", label: "Claimed AUM" },
+  { value: "$2.9M", label: "Campaign Funds to Husband's Firm" },
+  { value: "3,500%", label: "Spouse's Wealth Increase" },
+  { value: "$30M", label: "Household Net Worth" },
+  { value: "Africa", label: "Committee With Direct Conflict" },
 ];
 
 export default function StatCards() {
