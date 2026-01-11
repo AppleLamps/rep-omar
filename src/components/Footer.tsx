@@ -11,7 +11,7 @@ export default function Footer() {
             </div>
             <div>
               <span className="font-display font-bold text-lg text-white">Follow The Money</span>
-              <p className="text-slate-500 text-xs">Political Accountability Project</p>
+              <p className="text-slate-500 text-xs">by <a href="https://x.com/lamps_apple" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 hover:underline">Apple Lamps</a></p>
             </div>
           </div>
           <div className="text-center md:text-right">

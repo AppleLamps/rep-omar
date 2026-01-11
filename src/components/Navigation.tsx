@@ -48,6 +48,7 @@ export default function Navigation({ activeSection, scrollProgress }: Navigation
                 </svg>
               </div>
               <span className="font-display font-bold text-xl text-slate-900">Follow The Money</span>
+              <span className="text-slate-500 text-sm ml-2">by <a href="https://x.com/lamps_apple" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 hover:underline">Apple Lamps</a></span>
             </div>
 
             {/* Desktop Navigation */}
