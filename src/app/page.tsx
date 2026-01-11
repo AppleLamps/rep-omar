@@ -20,7 +20,7 @@ export default function Home() {
           setScrollProgress(progress);
           setShowBackToTop(window.scrollY > 500);
 
-          const sections = ["overview", "connection", "money", "conflict", "redflags", "sources"];
+          const sections = ["overview", "connection", "money", "conflict", "china", "redflags", "sources"];
           const reversedSections = sections.slice().reverse();
           for (const section of reversedSections) {
             const element = document.getElementById(section);
@@ -287,6 +287,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* China Connection */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-red-950" id="china">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 rounded-full bg-red-500/20 text-red-300 text-sm font-medium mb-4">
+              CONGRESSIONAL INVESTIGATION
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+              The China Connection
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Rep. John Moolenaar, Chairman of the House Select Committee on China, has formally challenged the State Department over Ivanhoe Atlantic&apos;s ties to Chinese Communist Party interests
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                The Corporate Chain
+              </h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">&#8226;</span>
+                  <span className="text-slate-300"><strong className="text-white">Ivanhoe Atlantic</strong> (Omar/Mynett investment) is majority owned by <strong className="text-white">I-Pulse Inc.</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">&#8226;</span>
+                  <span className="text-slate-300">I-Pulse is chaired by <strong className="text-white">Robert Friedland</strong>, who also chairs <strong className="text-white">Ivanhoe Mines</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">&#8226;</span>
+                  <span className="text-slate-300">Ivanhoe Mines is <strong className="text-white">~33% owned</strong> by Chinese state-linked entities</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                The Chinese Owners
+              </h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">&#8226;</span>
+                  <span className="text-slate-300"><strong className="text-white">CITIC Group</strong> - FCC designated its telecom services a <strong className="text-red-400">national security threat</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">&#8226;</span>
+                  <span className="text-slate-300"><strong className="text-white">Zijin Mining</strong> - Added to <strong className="text-red-400">Uyghur Forced Labor Prevention Act</strong> entity list (2025)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/30 mb-8">
+            <h3 className="text-lg font-semibold text-white mb-3">Beijing&apos;s &quot;Two Markets, Two Resources&quot; Strategy</h3>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Rep. Moolenaar characterizes this arrangement as a manifestation of the CCP&apos;s strategy to secure control over critical minerals through <strong className="text-white">minority stakes in foreign firms</strong> rather than outright ownership. By describing Ivanhoe Mines and Ivanhoe Atlantic as &quot;sister companies,&quot; he suggests that operational and leadership overlap creates a conduit for Chinese influence that legal separation cannot fully mitigate.
+            </p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+            <h3 className="text-lg font-semibold text-white mb-4">The $1.8 Billion Project Under Scrutiny</h3>
+            <p className="text-slate-300 text-sm mb-4">
+              Moolenaar&apos;s inquiry focuses on a <strong className="text-white">$1.8 billion rail and mining project</strong> in Guinea and Liberia, endorsed by the U.S. Embassy in Liberia, intended to connect the Simandou mining region to global markets.
+            </p>
+            <div className="bg-amber-500/10 rounded-lg p-4 border border-amber-500/30">
+              <p className="text-amber-300 text-sm">
+                <strong>Key Question:</strong> If the safeguards protecting American interests rely solely on corporate assurances of independence - despite shared leadership with entities heavily invested in by Beijing - does the U.S. critical mineral strategy remain compromised?
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-slate-400 text-sm italic">
+              Ivanhoe Atlantic has rejected these assertions, claiming the two entities are &quot;completely separate&quot; - but the overlapping leadership and ownership structure raises questions about the true independence of the firm.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Red Flags */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" id="redflags">
         <div className="max-w-5xl mx-auto">
@@ -373,14 +459,19 @@ export default function Home() {
             </div>
 
             <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
-              <h3 className="text-lg font-semibold text-red-400 mb-3">3. The &quot;Structuring Legislation&quot; Service</h3>
+              <h3 className="text-lg font-semibold text-red-400 mb-3">3. The China Connection</h3>
+              <p className="text-slate-300 text-sm">Ivanhoe Atlantic&apos;s parent company shares leadership with Ivanhoe Mines, which is ~33% owned by Chinese state-linked entities flagged for national security threats and forced labor. The House Select Committee on China has formally challenged State Department support for this project.</p>
+            </div>
+
+            <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
+              <h3 className="text-lg font-semibold text-red-400 mb-3">4. The &quot;Structuring Legislation&quot; Service</h3>
               <p className="text-slate-300 text-sm">Rose Lake Capital&apos;s website advertised &quot;structuring legislation&quot; as a service to clients. In the context of a firm owned by a congressional spouse, this is a direct admission of monetizing legislative influence.</p>
             </div>
           </div>
 
           <div className="mt-12 bg-white/5 rounded-xl p-6 sm:p-8 border border-white/10 text-center">
             <p className="text-slate-300 text-lg">
-              &quot;Any advocacy by Rep. Omar for infrastructure initiatives in West Africa directly benefits her household&apos;s net worth.&quot;
+              &quot;Any advocacy by Rep. Omar for infrastructure initiatives in West Africa directly benefits her household&apos;s net worth - while potentially advancing Chinese state interests.&quot;
             </p>
           </div>
         </div>
@@ -402,13 +493,15 @@ export default function Home() {
                 "Fox News - Ilhan Omar's net worth jumps to $30 million",
                 "Wine-Searcher - Congresswoman's Husband in Alleged Wine Fraud",
                 "American Experiment - Omar's husband linked to South Dakota lawsuit",
-                "St. Louis American - Don Samuels responds to Minnesota Reformer",
+                "Rep. Moolenaar (House Select Committee on China) - Letter to State Dept",
+                "Mining Weekly - US lawmaker raises concerns about Ivanhoe Atlantic's China ties",
                 "Ivanhoe Atlantic - About Us / Official Website",
                 "Mining Technology - Ivanhoe Atlantic IPO Coverage",
-                "Mining Weekly - Concerns about Ivanhoe Atlantic's ties with China",
                 "Sharecafe - Ivanhoe Atlantic Secures Key Railway Approval",
                 "Verita Global - Voizzit Bankruptcy Filings & Witness List",
                 "FEC Records - Campaign Disbursements to E Street Group",
+                "FCC - CITIC National Security Designation",
+                "Uyghur Forced Labor Prevention Act - Zijin Mining Entity List (2025)",
                 "Rose Lake Capital Website (Archived)",
               ].map((source, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-2 rounded hover:bg-slate-50">

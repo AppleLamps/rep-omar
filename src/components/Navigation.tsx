@@ -12,6 +12,7 @@ const navLinks = [
   { href: "#connection", label: "The Links" },
   { href: "#money", label: "Money Trail" },
   { href: "#conflict", label: "Conflicts" },
+  { href: "#china", label: "China Ties" },
   { href: "#sources", label: "Sources" },
 ];
 
