@@ -6,6 +6,20 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    // Dynamic colors used in page.tsx for entities, advisors, litigation, etc.
+    'bg-red-500/20', 'bg-red-100', 'bg-red-50', 'bg-red-600',
+    'bg-green-500/20', 'bg-green-100',
+    'bg-blue-500/20', 'bg-blue-100',
+    'bg-purple-500/20', 'bg-purple-100',
+    'bg-amber-500/20', 'bg-amber-50', 'bg-amber-600',
+    'text-red-400', 'text-red-300', 'text-red-500', 'text-red-600', 'text-red-700',
+    'text-green-400', 'text-green-600',
+    'text-blue-400', 'text-blue-600',
+    'text-purple-400', 'text-purple-300', 'text-purple-600',
+    'text-amber-400', 'text-amber-500', 'text-amber-700',
+    'border-red-100', 'border-amber-100',
+  ],
   theme: {
     extend: {
       colors: {
