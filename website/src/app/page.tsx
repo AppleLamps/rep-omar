@@ -10,28 +10,37 @@ export default function Home() {
 
   // Track scroll progress and active section
   useEffect(() => {
-    const handleScroll = () => {
-      // Calculate scroll progress
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
-      setShowBackToTop(window.scrollY > 500);
+    let ticking = false;
 
-      // Determine active section
-      const sections = ["overview", "findings", "structure", "leadership", "timeline", "litigation", "details", "forensics", "conclusions", "sources"];
-      for (const section of sections.reverse()) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150) {
-            setActiveSection(section);
-            break;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Calculate scroll progress (guard against division by zero)
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+          setScrollProgress(progress);
+          setShowBackToTop(window.scrollY > 500);
+
+          // Determine active section (use slice to avoid mutating original array)
+          const sections = ["overview", "findings", "structure", "leadership", "timeline", "litigation", "details", "forensics", "conclusions", "sources"];
+          const reversedSections = sections.slice().reverse();
+          for (const section of reversedSections) {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top <= 150) {
+                setActiveSection(section);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -49,6 +58,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#overview"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[70] focus:px-4 focus:py-2 focus:bg-red-600 focus:text-white focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
+
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-slate-200 z-[60]">
         <div
@@ -675,11 +692,11 @@ export default function Home() {
             <table className="w-full">
               <thead>
                 <tr className="bg-slate-900 text-white">
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Year</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Asset</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Value Range</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Income</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Analysis</th>
+                  <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Year</th>
+                  <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Asset</th>
+                  <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Value Range</th>
+                  <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Income</th>
+                  <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Analysis</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">

@@ -54,13 +54,6 @@ body {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* Card hover effect */
 .card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,42 +62,6 @@ body {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-}
-
-/* Prose styling */
-.prose-custom {
-  line-height: 1.8;
-}
-
-.prose-custom h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  color: #0f172a;
-}
-
-.prose-custom h3 {
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  color: #1e293b;
-}
-
-.prose-custom p {
-  margin-bottom: 1.25rem;
-  color: #334155;
-}
-
-.prose-custom ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.prose-custom li {
-  margin-bottom: 0.5rem;
-  color: #475569;
 }
 
 /* Highlight box */
@@ -116,11 +73,6 @@ body {
 /* Stat card */
 .stat-card {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-}
-
-/* Timeline */
-.timeline-dot {
-  box-shadow: 0 0 0 4px #fecaca;
 }
 
 /* Fade in animation */
@@ -152,16 +104,6 @@ body {
 .animate-fade-in-delay-3 {
   animation: fadeIn 0.6s ease-out 0.3s forwards;
   opacity: 0;
-}
-
-/* Number counter */
-@keyframes countUp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /* Print styles */
