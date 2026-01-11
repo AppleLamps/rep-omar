@@ -1,14 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<string>("overview");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("overview");
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Track scroll progress and active section
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate scroll progress
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+      setShowBackToTop(window.scrollY > 500);
+
+      // Determine active section
+      const sections = ["overview", "findings", "structure", "leadership", "timeline", "litigation", "details", "forensics", "conclusions", "sources"];
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navLinks = [
+    { href: "#overview", label: "Overview" },
+    { href: "#findings", label: "Findings" },
+    { href: "#timeline", label: "Ivanhoe" },
+    { href: "#details", label: "Political" },
+    { href: "#sources", label: "Sources" },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 h-1 bg-slate-200 z-[60]">
+        <div
+          className="h-full bg-gradient-to-r from-red-500 to-red-700 transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+      <nav className="fixed top-1 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
@@ -19,18 +69,81 @@ export default function Home() {
               </div>
               <span className="font-display font-bold text-xl text-slate-900">Apple Lamps</span>
             </div>
+
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#overview" className="text-slate-600 hover:text-red-600 transition-colors text-sm font-medium">Overview</a>
-              <a href="#findings" className="text-slate-600 hover:text-red-600 transition-colors text-sm font-medium">Key Findings</a>
-              <a href="#timeline" className="text-slate-600 hover:text-red-600 transition-colors text-sm font-medium">Timeline</a>
-              <a href="#details" className="text-slate-600 hover:text-red-600 transition-colors text-sm font-medium">Full Report</a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors ${
+                    activeSection === link.href.slice(1)
+                      ? "text-red-600 border-b-2 border-red-600 pb-1"
+                      : "text-slate-600 hover:text-red-600"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-slate-200 animate-fade-in">
+              <div className="flex flex-col space-y-3">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      activeSection === link.href.slice(1)
+                        ? "bg-red-50 text-red-600"
+                        : "text-slate-600 hover:bg-slate-50"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center ${
+          showBackToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
+        }`}
+        aria-label="Back to top"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
+
       {/* Hero Section */}
-      <header className="gradient-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <header className="gradient-bg pt-36 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <div className="animate-fade-in">
             <span className="inline-block px-4 py-2 rounded-full bg-red-500/20 text-red-300 text-sm font-medium mb-6">
@@ -69,22 +182,22 @@ export default function Home() {
       {/* Key Stats */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50" id="overview">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="stat-card rounded-2xl p-6 text-center card-hover">
-              <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">3,500%</div>
-              <div className="text-slate-400 text-sm">Asset Value Increase</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="stat-card rounded-2xl p-4 sm:p-6 text-center card-hover">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-400 mb-2">3,500%</div>
+              <div className="text-slate-400 text-xs sm:text-sm">Asset Value Increase</div>
             </div>
-            <div className="stat-card rounded-2xl p-6 text-center card-hover">
-              <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">$25M+</div>
-              <div className="text-slate-400 text-sm">Reported Valuation</div>
+            <div className="stat-card rounded-2xl p-4 sm:p-6 text-center card-hover">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-400 mb-2">$25M+</div>
+              <div className="text-slate-400 text-xs sm:text-sm">Reported Valuation</div>
             </div>
-            <div className="stat-card rounded-2xl p-6 text-center card-hover">
-              <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">4+</div>
-              <div className="text-slate-400 text-sm">Active Litigations</div>
+            <div className="stat-card rounded-2xl p-4 sm:p-6 text-center card-hover">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-400 mb-2">4+</div>
+              <div className="text-slate-400 text-xs sm:text-sm">Active Litigations</div>
             </div>
-            <div className="stat-card rounded-2xl p-6 text-center card-hover">
-              <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">$60B</div>
-              <div className="text-slate-400 text-sm">Claimed AUM</div>
+            <div className="stat-card rounded-2xl p-4 sm:p-6 text-center card-hover">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-400 mb-2">$60B</div>
+              <div className="text-slate-400 text-xs sm:text-sm">Claimed AUM</div>
             </div>
           </div>
         </div>
@@ -100,7 +213,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="highlight-box rounded-xl p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold">1</span>
+                <span className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
                 Investigative Mandate
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -110,7 +223,7 @@ export default function Home() {
 
             <div className="highlight-box rounded-xl p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold">2</span>
+                <span className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
                 Core Finding: The Valuation Anomaly
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -120,7 +233,7 @@ export default function Home() {
 
             <div className="highlight-box rounded-xl p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold">3</span>
+                <span className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
                 The Political-Commercial Pipeline
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -132,13 +245,13 @@ export default function Home() {
       </section>
 
       {/* Corporate Structure */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900" id="structure">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-12 text-center">
             Corporate Entity Network
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 card-hover">
               <div className="w-12 h-12 rounded-lg bg-red-500/20 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,16 +300,16 @@ export default function Home() {
       </section>
 
       {/* Key Players */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" id="leadership">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">
             Executive Leadership Profile
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 card-hover">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-bold text-xl">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0">
                   TM
                 </div>
                 <div>
@@ -226,9 +339,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 card-hover">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-bold text-xl">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0">
                   WH
                 </div>
                 <div>
@@ -261,6 +374,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Advisory Board - NEW SECTION */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4 text-center">
+            The Advisory Board
+          </h2>
+          <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+            Influence Laundering: The advisors lend the firm &quot;statutory gravity&quot; required to operate in complex international jurisdictions.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl p-6 border border-slate-200 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <span className="text-red-600 font-bold">JP</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">Dr. J. Peter Pham</h3>
+                  <p className="text-slate-500 text-sm mb-3">Former U.S. Special Envoy for Sahel &amp; Great Lakes Regions</p>
+                  <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+                    <p className="text-red-700 text-xs font-medium">CRITICAL ASSET</p>
+                    <p className="text-slate-600 text-sm mt-1">Chairman of Ivanhoe Atlantic. Bridges Rose Lake to its most valuable investment. Provides diplomatic cover for mining deals in Guinea/Liberia.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                  <span className="text-blue-600 font-bold">MB</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">Max Baucus</h3>
+                  <p className="text-slate-500 text-sm mb-3">Former U.S. Senator (MT); Former U.S. Ambassador to China</p>
+                  <p className="text-slate-600 text-sm">Provides high-level access to Beijing and Washington. Essential for navigating U.S.-China rivalry in critical minerals. Legitimizes firm to institutional investors.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                  <span className="text-green-600 font-bold">CP</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">Collin Peterson</h3>
+                  <p className="text-slate-500 text-sm mb-3">Former U.S. Representative (MN); Chair of House Ag Committee</p>
+                  <p className="text-slate-600 text-sm">Provides deep regulatory knowledge of the USDA and farm bills. Likely instrumental in firm&apos;s hemp/cannabis strategy in the Midwest.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                  <span className="text-purple-600 font-bold">KK</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">Kate Knuth</h3>
+                  <p className="text-slate-500 text-sm mb-3">Former MN State Rep; Minneapolis Mayoral Candidate</p>
+                  <p className="text-slate-600 text-sm">Reinforces the firm&apos;s &quot;progressive&quot; and &quot;green&quot; branding. Maintains local political networks in Minnesota.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The Ivanhoe Connection */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-red-950" id="timeline">
         <div className="max-w-5xl mx-auto">
@@ -271,25 +453,25 @@ export default function Home() {
             Ivanhoe Atlantic &amp; The Iron Ore Play
           </p>
 
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 sm:p-10">
-            <div className="grid md:grid-cols-2 gap-10">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-10">
+            <div className="grid md:grid-cols-2 gap-8 sm:gap-10">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">The Asset: Kon Kweni</h3>
                 <ul className="space-y-3 text-slate-300 text-sm">
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0"></span>
                     Ultra-high grade iron ore deposit in Guinea&apos;s Nimba Mountains
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0"></span>
                     Essential for &quot;green steel&quot; production (Direct Reduced Iron)
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0"></span>
                     Previously stranded for decades due to logistical complexity
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0"></span>
                     Requires cross-border rail access through Liberia
                   </li>
                 </ul>
@@ -298,19 +480,19 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-white mb-4">The Strategic Unlock</h3>
                 <ul className="space-y-3 text-slate-300 text-sm">
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0"></span>
                     Concession &amp; Access Agreement with Government of Liberia (2024-2025)
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0"></span>
                     Broke ArcelorMittal&apos;s rail monopoly
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0"></span>
                     Dr. J. Peter Pham uniquely positioned to facilitate
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 flex-shrink-0"></span>
                     IPO targeting A$200-300M on Australian Securities Exchange
                   </li>
                 </ul>
@@ -328,21 +510,21 @@ export default function Home() {
       </section>
 
       {/* Litigation Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" id="litigation">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">
             Active Litigation &amp; Legal Exposure
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-red-50 rounded-xl p-6 border border-red-100">
+            <div className="bg-red-50 rounded-xl p-5 sm:p-6 border border-red-100">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold text-slate-900 mb-2">Mohd v. eStCru (California Superior Court)</h3>
                   <p className="text-slate-600 text-sm mb-3">
                     D.C. restaurateur invested $300,000 with a contractual guarantee of 200% return ($900,000 total) within 18 months. Firm repaid principal but failed to pay $600k profit.
@@ -354,14 +536,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-red-50 rounded-xl p-6 border border-red-100">
+            <div className="bg-red-50 rounded-xl p-5 sm:p-6 border border-red-100">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold text-slate-900 mb-2">Badlands Fund Litigation (Hennepin County, MN)</h3>
                   <p className="text-slate-600 text-sm mb-3">
                     Investors allege Hailer raised $3.5 million for South Dakota cannabis operations but failed to deploy or return funds.
@@ -373,14 +555,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
+            <div className="bg-amber-50 rounded-xl p-5 sm:p-6 border border-amber-100">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
                   </svg>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold text-slate-900 mb-2">Voizzit Bankruptcy Contempt (U.S. Bankruptcy Court, Delaware)</h3>
                   <p className="text-slate-600 text-sm mb-3">
                     Chapter 11 Trustee filed motion holding &quot;Voizzit Defendants&quot; in contempt, describing them as &quot;arrogantly defiant&quot; and accusing them of attempting to &quot;fleece the Estate.&quot;
@@ -403,30 +585,30 @@ export default function Home() {
           </h2>
 
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-            <div className="p-8 sm:p-10 border-b border-slate-100">
+            <div className="p-6 sm:p-10 border-b border-slate-100">
               <h3 className="text-xl font-semibold text-slate-900 mb-4">The Commodification of Office</h3>
               <p className="text-slate-600 mb-6">
                 The central ethical tension is the overlap between private equity interests and legislative powers. Archived versions of the Rose Lake website explicitly listed <strong>&quot;structuring legislation&quot;</strong> as a service offered to clients&mdash;a flagrant admission of influence peddling.
               </p>
-              <div className="bg-slate-900 rounded-lg p-6">
+              <div className="bg-slate-900 rounded-lg p-5 sm:p-6">
                 <p className="text-slate-300 text-sm italic">
                   &quot;In the context of a firm owned by a congressional spouse, this is a flagrant admission of influence peddling. It implies that the firm can write favorable laws&mdash;or block unfavorable ones&mdash;on behalf of its portfolio companies.&quot;
                 </p>
               </div>
             </div>
 
-            <div className="p-8 sm:p-10">
+            <div className="p-6 sm:p-10">
               <h3 className="text-xl font-semibold text-slate-900 mb-4">The Africa Committee Conflict</h3>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-red-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <p className="text-slate-600 text-sm">Service on House Foreign Affairs Committee &amp; Subcommittee on Africa</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-red-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <p className="text-slate-600 text-sm">Spouse&apos;s primary asset depends on U.S. diplomatic support in Guinea and Liberia</p>
@@ -434,13 +616,13 @@ export default function Home() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-red-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <p className="text-slate-600 text-sm">Formation of U.S.-Africa Policy Working Group following Rose Lake establishment</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-red-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <p className="text-slate-600 text-sm">Any advocacy for &quot;Lobito Corridor&quot; initiatives directly benefits household net worth</p>
@@ -453,13 +635,43 @@ export default function Home() {
       </section>
 
       {/* Financial Forensics */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" id="forensics">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">
             Financial Forensic Audit
           </h2>
 
-          <div className="overflow-x-auto">
+          {/* Mobile-friendly card view for small screens */}
+          <div className="sm:hidden space-y-4">
+            {[
+              { year: "2022", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "None", analysis: "Dormant/Shell status", highlight: false },
+              { year: "2023", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "$15k - $50k", analysis: "Modest consulting fees", highlight: false },
+              { year: "2024", asset: "Rose Lake Capital", value: "$5M - $25M", income: "None", analysis: "REVALUATION EVENT", highlight: true },
+              { year: "2023", asset: "eStCru LLC", value: "$15k - $50k", income: "$201 - $1,000", analysis: "Struggling micro-business", highlight: false },
+              { year: "2024", asset: "eStCru LLC", value: "$1M - $5M", income: "None", analysis: "Suspicious markup", highlight: true },
+            ].map((row, idx) => (
+              <div key={idx} className={`rounded-xl p-4 border ${row.highlight ? "bg-red-50 border-red-200" : "bg-white border-slate-200"}`}>
+                <div className="flex justify-between items-start mb-2">
+                  <span className="font-semibold text-slate-900">{row.asset}</span>
+                  <span className="text-slate-500 text-sm">{row.year}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div>
+                    <span className="text-slate-500">Value: </span>
+                    <span className={row.highlight ? "font-bold text-red-600" : "text-slate-700"}>{row.value}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Income: </span>
+                    <span className="text-slate-700">{row.income}</span>
+                  </div>
+                </div>
+                <p className={`text-sm mt-2 ${row.highlight ? "font-semibold text-red-600" : "text-slate-500 italic"}`}>{row.analysis}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop table view */}
+          <div className="hidden sm:block overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full">
               <thead>
                 <tr className="bg-slate-900 text-white">
@@ -510,9 +722,9 @@ export default function Home() {
             </table>
           </div>
 
-          <div className="mt-10 bg-amber-50 rounded-xl p-6 border border-amber-200">
+          <div className="mt-10 bg-amber-50 rounded-xl p-5 sm:p-6 border border-amber-200">
             <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-              <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
               The $60 Billion AUM Claim
@@ -525,28 +737,28 @@ export default function Home() {
       </section>
 
       {/* Conclusions */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900" id="conclusions">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-12 text-center">
             Risk Assessment &amp; Conclusions
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/20">
+            <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
               <h3 className="text-lg font-semibold text-red-400 mb-3">1. Valuation is Speculative</h3>
               <p className="text-slate-300 text-sm">
                 The $25 million valuation is a &quot;paper tiger,&quot; dependent entirely on the successful IPO of Ivanhoe Atlantic. If that IPO fails or is blocked by regulators due to Chinese ownership concerns, the value of Rose Lake could revert to zero.
               </p>
             </div>
 
-            <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/20">
+            <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
               <h3 className="text-lg font-semibold text-red-400 mb-3">2. Litigation Risk is Existential</h3>
               <p className="text-slate-300 text-sm">
                 The principals face active fraud allegations in multiple courts. The &quot;OFAC excuse&quot; used in the Badlands case suggests a willingness to deceive investors.
               </p>
             </div>
 
-            <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/20">
+            <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
               <h3 className="text-lg font-semibold text-red-400 mb-3">3. Ethical Conflicts are Systemic</h3>
               <p className="text-slate-300 text-sm">
                 The firm&apos;s business model creates an intractable conflict of interest with committee roles on House Foreign Affairs. The firm is effectively monetizing U.S. foreign policy in West Africa.
@@ -554,7 +766,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 bg-white/5 rounded-xl p-8 border border-white/10">
+          <div className="mt-12 bg-white/5 rounded-xl p-6 sm:p-8 border border-white/10">
             <h3 className="text-xl font-semibold text-white mb-6">Recommendations for Due Diligence</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-4">
@@ -583,8 +795,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sources Section - NEW */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50" id="sources">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">
+            Sources &amp; Citations
+          </h2>
+
+          <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
+            <div className="grid sm:grid-cols-2 gap-4 text-sm">
+              {[
+                { num: 1, text: "The Spectator - Did Ilhan Omar marry her brother?" },
+                { num: 2, text: "Fox News - Ilhan Omar's net worth jumps to $30 million" },
+                { num: 3, text: "Evrim Ağacı - Ilhan Omar Faces Scrutiny After Net Worth Soars" },
+                { num: 4, text: "St. Louis American - Don Samuels responds to Minnesota Reformer article" },
+                { num: 5, text: "Wine-Searcher - Congresswoman's Husband in Alleged Wine Fraud" },
+                { num: 6, text: "American Experiment - Omar's husband linked to South Dakota weed lawsuit" },
+                { num: 7, text: "House.gov - 2024 Financial Disclosure" },
+                { num: 8, text: "People.com - Who Is Ilhan Omar's Husband?" },
+                { num: 9, text: "Ivanhoe Atlantic - About Us" },
+                { num: 10, text: "House.gov - 2023 Financial Disclosure" },
+                { num: 11, text: "Mining Technology - Ivanhoe Atlantic targets up to $190.8m in Australian IPO" },
+                { num: 12, text: "Fastmarkets - International Iron Ore and Green Steel Summit 2025" },
+                { num: 13, text: "Sharecafe - Ivanhoe Atlantic Secures Key Railway Approval" },
+                { num: 14, text: "Australian Mining Review - Ivanhoe delays ASX IPO" },
+                { num: 15, text: "Ivanhoe Atlantic Official Website" },
+                { num: 16, text: "Mining Weekly - US lawmaker raises concerns about Ivanhoe Atlantic's ties with China" },
+                { num: 17, text: "WNFL Sports - US lawmaker raises concerns about miner Ivanhoe Atlantic" },
+                { num: 18, text: "Discovery Alert - Congressional Scrutiny Grows Over Ivanhoe Atlantic" },
+                { num: 19, text: "Verita Global - Voizzit Bankruptcy Filings" },
+                { num: 20, text: "Verita Global - Voizzit Witness List" },
+                { num: 21, text: "WTTW News - Johnson Warns Chicago is Headed for Shutdown" },
+                { num: 22, text: "House.gov - 2022 Financial Disclosure" },
+              ].map((source) => (
+                <div key={source.num} className="flex items-start gap-3 p-2 rounded hover:bg-slate-50">
+                  <span className="text-red-600 font-mono text-xs mt-0.5">[{source.num}]</span>
+                  <span className="text-slate-600">{source.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-slate-800">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-slate-800 print:hidden">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
