@@ -118,7 +118,7 @@ export default function ConnectionMap() {
                     <p className="text-slate-500 text-xs">African Mining Company</p>
                   </div>
                 </div>
-                <p className="text-slate-400 text-sm">Iron ore project in <span className="text-green-400">Guinea/Liberia</span> - countries under Rep. Omar&apos;s Africa Subcommittee jurisdiction</p>
+                <p className="text-slate-400 text-sm">Kon Kweni iron ore project (formerly Nimba) in <span className="text-green-400">Guinea/Liberia</span> - countries under Rep. Omar&apos;s Africa Subcommittee jurisdiction</p>
               </div>
 
               <div className="bg-slate-800/50 rounded-xl p-5 border border-slate-700">

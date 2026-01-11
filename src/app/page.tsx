@@ -59,7 +59,7 @@ export default function Home() {
             Understanding the key figures and their roles in this financial arrangement
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl border-2 border-red-200 p-6 sm:p-8">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
@@ -133,6 +133,78 @@ export default function Home() {
                   </svg>
                   <p className="text-slate-600">Accompanied Rep. Omar on <strong>Africa trips</strong></p>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 sm:p-8">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                  WH
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">Will Hailer</h3>
+                  <p className="text-slate-500">CEO &amp; Co-Founder, Rose Lake Capital</p>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-slate-600">Former <strong>MN political operative</strong></p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p className="text-slate-600"><strong>Named defendant</strong> in fraud lawsuits</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                  <p className="text-slate-600">Sued in <strong>Badlands</strong> and <strong>Mohd</strong> cases</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-slate-600">Allegedly raised <strong>$3.5M</strong> for cannabis fund</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Advisors */}
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Key Advisors</h3>
+            <p className="text-slate-600 text-center mb-8 max-w-xl mx-auto text-sm">
+              High-profile political figures lending credibility to the firm
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    MB
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Max Baucus</h4>
+                    <p className="text-slate-500 text-sm">Former U.S. Ambassador to China</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">Legitimizes the firm to <strong>Chinese investors</strong> and provides diplomatic credibility for international deals.</p>
+              </div>
+              <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    CP
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Collin Peterson</h4>
+                    <p className="text-slate-500 text-sm">Former Chair, House Ag Committee</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">Linked to the <strong>cannabis/hemp strategy</strong> through his agricultural policy expertise and industry connections.</p>
               </div>
             </div>
           </div>
@@ -215,7 +287,7 @@ export default function Home() {
               </div>
               <div className="bg-green-50 rounded-xl p-5 border border-green-100">
                 <p className="text-slate-700">
-                  Rose Lake acquired equity in <strong>Ivanhoe Atlantic</strong>, a mining company developing iron ore deposits in <strong className="text-green-700">Guinea and Liberia</strong> - countries directly under Rep. Omar&apos;s Subcommittee on Africa jurisdiction.
+                  Rose Lake acquired equity in <strong>Ivanhoe Atlantic</strong>, a mining company developing the <strong>Kon Kweni</strong> iron ore project (formerly Nimba) in <strong className="text-green-700">Guinea and Liberia</strong> - countries directly under Rep. Omar&apos;s Subcommittee on Africa jurisdiction.
                 </p>
               </div>
               <div className="mt-4 p-4 bg-slate-900 rounded-lg">
@@ -425,6 +497,21 @@ export default function Home() {
                   <h3 className="font-semibold text-slate-900 mb-2">$60 Billion AUM Claim</h3>
                   <p className="text-slate-600 text-sm mb-3">Rose Lake claims to have $60 billion in assets under management. There is no evidence of SEC registration as an investment adviser managing this volume.</p>
                   <p className="text-amber-700 text-sm font-medium">The firm likely aggregates the Total Project Value of infrastructure deals they touch - a deceptive marketing tactic.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-red-50 rounded-xl p-5 sm:p-6 border border-red-100">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-slate-900 mb-2">Voizzit Information Technology - Bankruptcy Contempt</h3>
+                  <p className="text-slate-600 text-sm mb-3">The Chapter 11 Trustee filed a motion holding the defendants in contempt of court for their conduct during bankruptcy proceedings.</p>
+                  <p className="text-red-700 text-sm font-medium">The Trustee characterized the defendants as &quot;arrogantly defiant&quot; of court orders.</p>
                 </div>
               </div>
             </div>
