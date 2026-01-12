@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Navigation, BackToTop, Hero, StatCards, FinancialTable, Footer, ConnectionMap } from "@/components";
+import { Navigation, BackToTop, Hero, StatCards, FinancialTable, Footer, ConnectionMap, DisclaimerBanner } from "@/components";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("overview");
@@ -47,6 +47,7 @@ export default function Home() {
       <Navigation activeSection={activeSection} scrollProgress={scrollProgress} />
       <BackToTop show={showBackToTop} />
       <Hero />
+      <DisclaimerBanner />
       <StatCards />
 
       {/* The Players */}
@@ -442,6 +443,17 @@ export default function Home() {
               Ivanhoe Atlantic has rejected these assertions, claiming the two entities are &quot;completely separate&quot; - but the overlapping leadership and ownership structure raises questions about the true independence of the firm.
             </p>
           </div>
+
+          {/* Congressional Inquiry Notice */}
+          <div className="mt-8 bg-white/5 border border-white/20 rounded-xl p-4">
+            <p className="text-slate-400 text-xs">
+              <strong className="text-slate-300">Note:</strong> The concerns described above are drawn from official
+              congressional correspondence by Rep. John Moolenaar (R-MI), Chairman of the House Select Committee on
+              the Chinese Communist Party. The referenced letter represents the views of that congressional office
+              and does not constitute findings of fact. Ivanhoe Atlantic and related entities dispute these characterizations
+              and maintain that proper corporate separations exist.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -451,9 +463,19 @@ export default function Home() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4 text-center">
             Red Flags &amp; Litigation
           </h2>
-          <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-slate-600 text-center mb-8 max-w-2xl mx-auto">
             Additional concerns surrounding the financial dealings
           </p>
+
+          {/* Allegations Disclaimer */}
+          <div className="bg-slate-100 border border-slate-300 rounded-xl p-4 mb-8">
+            <p className="text-slate-700 text-sm">
+              <strong>Important:</strong> The items below describe <em>allegations</em> made in lawsuits and other
+              legal proceedings. These are claims made by third parties and have not been adjudicated. All individuals
+              referenced are presumed innocent unless proven otherwise in a court of law. The inclusion of these
+              allegations is for informational purposes and does not constitute an assertion of their accuracy.
+            </p>
+          </div>
 
           <div className="space-y-6">
             <div className="bg-red-50 rounded-xl p-5 sm:p-6 border border-red-100">
@@ -570,6 +592,17 @@ export default function Home() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">
             Sources &amp; Citations
           </h2>
+
+          {/* Source Attribution Notice */}
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+            <p className="text-blue-800 text-sm">
+              <strong>Attribution Notice:</strong> The information presented in this report is derived from the publicly
+              available sources listed below. The author has made reasonable efforts to accurately represent these sources
+              but cannot guarantee their completeness or current accuracy. Readers are encouraged to consult the original
+              sources directly. The listing of a source does not imply endorsement by that source of the conclusions
+              drawn in this report.
+            </p>
+          </div>
 
           <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
             <div className="grid sm:grid-cols-2 gap-4 text-sm">

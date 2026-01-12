@@ -19,10 +19,91 @@ export default function Footer() {
             <p className="text-slate-600 text-xs mt-1">Sources: House.gov, Court Records, SEC Filings</p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-slate-800 text-center">
-          <p className="text-slate-600 text-xs">
-            This report is provided for informational purposes only and does not constitute legal or financial advice.
-          </p>
+
+        {/* Legal Disclaimers Section */}
+        <div className="mt-10 pt-8 border-t border-slate-800">
+          <h3 className="text-slate-400 text-sm font-semibold mb-4 text-center">Legal Disclaimers</h3>
+
+          <div className="space-y-4 text-slate-500 text-xs leading-relaxed">
+            {/* Opinion & Commentary Disclaimer */}
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
+              <p className="font-medium text-slate-400 mb-2">Opinion & Commentary</p>
+              <p>
+                This publication constitutes protected opinion, commentary, and analysis on matters of public concern
+                regarding public figures and their publicly disclosed financial activities. The characterizations,
+                conclusions, and interpretations presented herein represent the author&apos;s opinions based on publicly
+                available information. Readers are encouraged to review the cited sources and form their own conclusions.
+              </p>
+            </div>
+
+            {/* Fair Comment on Public Figures */}
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
+              <p className="font-medium text-slate-400 mb-2">Fair Comment on Public Figures</p>
+              <p>
+                The individuals discussed in this report are public figures who have voluntarily entered public life.
+                Commentary on the conduct of public officials and their families regarding matters of public interest
+                is protected speech under the First Amendment. This analysis concerns publicly disclosed financial
+                arrangements and congressional activities that are legitimate subjects of public scrutiny and debate.
+              </p>
+            </div>
+
+            {/* Source Attribution */}
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
+              <p className="font-medium text-slate-400 mb-2">Source Attribution & Accuracy</p>
+              <p>
+                All factual claims are derived from publicly available sources including official congressional financial
+                disclosures (House.gov), court filings, SEC records, news reports, and archived website content.
+                Where allegations are reported, they are attributed to their original sources (e.g., lawsuits,
+                congressional letters, news investigations). The inclusion of third-party allegations does not
+                constitute an endorsement of their accuracy. We endeavor to present information accurately but
+                cannot guarantee the completeness or current accuracy of all cited sources.
+              </p>
+            </div>
+
+            {/* Allegations vs. Findings */}
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
+              <p className="font-medium text-slate-400 mb-2">Allegations vs. Adjudicated Findings</p>
+              <p>
+                References to lawsuits, investigations, or allegations describe claims made by third parties in
+                legal proceedings or official inquiries. Such references do not constitute assertions of guilt
+                or wrongdoing. All persons referenced are presumed innocent of any wrongdoing unless and until
+                proven otherwise in a court of law. Pending litigation may be resolved in favor of any party,
+                and the outcomes of referenced legal matters should be independently verified.
+              </p>
+            </div>
+
+            {/* No Professional Advice */}
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
+              <p className="font-medium text-slate-400 mb-2">No Professional Advice</p>
+              <p>
+                This report is provided for informational and educational purposes only. Nothing herein constitutes
+                legal, financial, investment, or professional advice. Readers should consult qualified professionals
+                before making any decisions based on information presented here. The author and publisher disclaim
+                any liability for actions taken based on this content.
+              </p>
+            </div>
+
+            {/* Right of Response */}
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
+              <p className="font-medium text-slate-400 mb-2">Right of Response</p>
+              <p>
+                Any individual or entity mentioned in this report who believes any statement to be inaccurate
+                is invited to provide documentation supporting a correction. Verified corrections will be
+                promptly published. Contact the author via the linked social media profile above.
+              </p>
+            </div>
+          </div>
+
+          {/* Copyright & Final Notice */}
+          <div className="mt-6 pt-6 border-t border-slate-800 text-center">
+            <p className="text-slate-600 text-xs">
+              &copy; {new Date().getFullYear()} Apple Lamps. All rights reserved.
+              This work is protected by copyright and may not be reproduced without permission.
+            </p>
+            <p className="text-slate-600 text-xs mt-2">
+              Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
