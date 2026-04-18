@@ -20,7 +20,17 @@ export default function Home() {
           setScrollProgress(progress);
           setShowBackToTop(window.scrollY > 500);
 
-          const sections = ["overview", "connection", "money", "conflict", "china", "redflags", "sources"];
+          const sections = [
+            "overview",
+            "players",
+            "connection",
+            "money",
+            "papertiger",
+            "conflict",
+            "china",
+            "redflags",
+            "sources",
+          ];
           const reversedSections = sections.slice().reverse();
           for (const section of reversedSections) {
             const element = document.getElementById(section);
@@ -126,7 +136,7 @@ export default function Home() {
                   <svg className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
-                  <p className="text-slate-600">Personal stake grew from <strong>&lt;$1,000 to $25M+</strong> in one year</p>
+                  <p className="text-slate-600">Disclosures show Rose Lake/eStCru stakes moving from <strong>nominal to multi-million-dollar ranges</strong> as valuations were updated—wealth is largely <strong>illiquid</strong> until a sale or IPO</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +162,14 @@ export default function Home() {
                   <svg className="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <p className="text-slate-600">Former <strong>MN political operative</strong></p>
+                  <p className="text-slate-600">Former <strong>Executive Director, Texas Democratic Party</strong>; campaign work for <strong>Keith Ellison</strong> and <strong>Al Franken</strong> (Minnesota)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <p className="text-slate-600">Court filings have listed him as a <strong>Nebraska</strong> resident in some matters</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,15 +202,29 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                 <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-800 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    JP
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Dr. J. Peter Pham</h4>
+                    <p className="text-slate-500 text-sm">Former U.S. Special Envoy, Sahel &amp; Great Lakes (Africa)</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  <strong>Chairman of Ivanhoe Atlantic</strong> while associated with Rose Lake—bridging the D.C. advisory bench to the Guinea/Liberia iron-ore story and regional diplomacy.
+                </p>
+              </div>
+              <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <div className="flex items-center gap-4 mb-3">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                     MB
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Max Baucus</h4>
-                    <p className="text-slate-500 text-sm">Former U.S. Ambassador to China</p>
+                    <p className="text-slate-500 text-sm">Former U.S. Senator (MT); former Ambassador to China</p>
                   </div>
                 </div>
-                <p className="text-slate-600 text-sm">Legitimizes the firm to <strong>Chinese investors</strong> and provides diplomatic credibility for international deals.</p>
+                <p className="text-slate-600 text-sm">High-level U.S.–China and Washington weight—useful for critical-minerals narratives and institutional credibility.</p>
               </div>
               <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                 <div className="flex items-center gap-4 mb-3">
@@ -202,11 +233,64 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Collin Peterson</h4>
-                    <p className="text-slate-500 text-sm">Former Chair, House Ag Committee</p>
+                    <p className="text-slate-500 text-sm">Former U.S. Representative (MN); former Chair, House Agriculture</p>
                   </div>
                 </div>
-                <p className="text-slate-600 text-sm">Linked to the <strong>cannabis/hemp strategy</strong> through his agricultural policy expertise and industry connections.</p>
+                <p className="text-slate-600 text-sm">Deep <strong>USDA / farm-bill</strong> context—often tied to hemp and cannabis regulatory angles in the upper Midwest.</p>
               </div>
+              <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    KK
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Kate Knuth</h4>
+                    <p className="text-slate-500 text-sm">Former MN state representative; Minneapolis mayoral candidate</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">Reinforces local <strong>Minnesota</strong> networks and progressive &quot;green&quot; positioning for the firm&apos;s brand.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Related entities */}
+          <div className="mt-14">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 text-center">Related entities (public records &amp; litigation)</h3>
+            <p className="text-slate-600 text-center mb-8 max-w-2xl mx-auto text-sm">
+              Rose Lake sits at the center of a cluster of LLCs and funds named in civil cases and press coverage—not a single ticker, but a web of vehicles.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-slate-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-slate-900 text-white text-left">
+                    <th className="px-4 py-3 font-semibold">Entity</th>
+                    <th className="px-4 py-3 font-semibold">Jurisdiction / focus</th>
+                    <th className="px-4 py-3 font-semibold">Notes</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 bg-white">
+                  <tr>
+                    <td className="px-4 py-3 font-medium text-slate-900">Rose Lake Capital LLC</td>
+                    <td className="px-4 py-3 text-slate-600">Washington, D.C.</td>
+                    <td className="px-4 py-3 text-slate-600">Holding company on House financial disclosures; described as venture/advisory.</td>
+                  </tr>
+                  <tr className="bg-slate-50">
+                    <td className="px-4 py-3 font-medium text-slate-900">eSt Ventures</td>
+                    <td className="px-4 py-3 text-slate-600">Delaware; cannabis VC</td>
+                    <td className="px-4 py-3 text-slate-600">Named in investor litigation tied to South Dakota cannabis (Badlands).</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium text-slate-900">eStCru LLC</td>
+                    <td className="px-4 py-3 text-slate-600">California (Santa Rosa); wine brand</td>
+                    <td className="px-4 py-3 text-slate-600">Co-founded by Mynett/Hailer; Mohd v. eStCru et al. in CA state court.</td>
+                  </tr>
+                  <tr className="bg-slate-50">
+                    <td className="px-4 py-3 font-medium text-slate-900">Badlands Fund / Badlands Ventures</td>
+                    <td className="px-4 py-3 text-slate-600">Delaware; South Dakota ops</td>
+                    <td className="px-4 py-3 text-slate-600">Channel for cannabis capital; alleged in MN complaints.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -287,16 +371,134 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-green-50 rounded-xl p-5 border border-green-100">
-                <p className="text-slate-700">
-                  Rose Lake acquired equity in <strong>Ivanhoe Atlantic</strong>, a mining company developing the <strong>Kon Kweni</strong> iron ore project (formerly Nimba) in <strong className="text-green-700">Guinea and Liberia</strong> - countries directly under Rep. Omar&apos;s Subcommittee on Africa jurisdiction.
+                <p className="text-slate-700 mb-4">
+                  Rose Lake acquired equity in <strong>Ivanhoe Atlantic</strong>, focused on the <strong>Kon Kweni</strong> high-grade iron ore asset (Nimba region) in <strong className="text-green-700">Guinea</strong>, with export logistics hinging on <strong>Liberian rail and port</strong> access—precisely the kind of cross-border deal that turns on diplomacy and infrastructure.
                 </p>
+                <ul className="list-disc list-inside space-y-2 text-slate-700 text-sm">
+                  <li>
+                    <strong>Rail &quot;unlock&quot;:</strong> Press and company reporting describe a <strong>concession / access agreement</strong> in Liberia that allows use of existing rail to the coast—reducing the &quot;stranded asset&quot; problem that held back prior owners.
+                  </li>
+                  <li>
+                    <strong>Commodity story:</strong> Ultra-high-grade ore is marketed in part for <strong>green steel</strong> / DRI (direct reduced iron) as steelmakers decarbonize—supporting a bullish pre-IPO narrative.
+                  </li>
+                  <li>
+                    <strong>Liquidity path:</strong> Ivanhoe Atlantic has targeted an <strong>ASX</strong> listing; press has cited raise sizes on the order of <strong>A$200–300 million</strong> (timing subject to market conditions and regulatory process).
+                  </li>
+                </ul>
               </div>
               <div className="mt-4 p-4 bg-slate-900 rounded-lg">
                 <p className="text-slate-300 text-sm">
-                  <strong className="text-white">Key Connection:</strong> Dr. J. Peter Pham, former U.S. Special Envoy for the Sahel &amp; Great Lakes Regions, serves on Rose Lake&apos;s advisory board AND is Chairman of Ivanhoe Atlantic.
+                  <strong className="text-white">Key Connection:</strong> Dr. J. Peter Pham, former U.S. Special Envoy for the Sahel &amp; Great Lakes Regions, has been described as <strong>Chairman of Ivanhoe Atlantic</strong> while linked to Rose Lake&apos;s advisory circle—connecting African diplomacy to the firm&apos;s largest reported bet.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Paper Tiger */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" id="papertiger">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-medium mb-4">
+              VALUATION ANALYSIS
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+              The &quot;Paper Tiger&quot;
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              The $25 million headline valuation rests on a single pre-IPO bet that hasn&apos;t paid out yet&mdash;and may never
+            </p>
+          </div>
+
+          {/* What Drove the Markup */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 mb-6">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              What Drove the Markup
+            </h3>
+            <p className="text-slate-700 mb-4">
+              The valuation explosion is attributed almost entirely to Rose Lake&apos;s equity stake in <strong>Ivanhoe Atlantic</strong>, a U.S.-domiciled critical-minerals company developing the <strong>Kon Kweni iron ore project</strong> in Guinea.
+            </p>
+            <div className="bg-amber-50 rounded-xl p-5 border border-amber-100 mb-4">
+              <p className="text-slate-700 text-sm">
+                <strong className="text-amber-800">The &quot;unlock&quot;:</strong> A <strong>Concession and Access Agreement</strong> with Liberia in late 2024/early 2025 granted Ivanhoe Atlantic rail access to the coast&mdash;breaking <strong>ArcelorMittal&apos;s monopoly</strong> on rail infrastructure and converting Kon Kweni from a stranded asset into a commercially viable mine. Without that rail deal, the ore has no route to market.
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+              <p className="text-slate-700 text-sm">
+                <strong>The diplomatic lever:</strong> Dr. J. Peter Pham&mdash;former <strong>U.S. Special Envoy for the Sahel &amp; Great Lakes</strong>&mdash;serves as Chairman of Ivanhoe Atlantic and is linked to Rose Lake&apos;s advisory circle. His background in African diplomacy is flagged as the likely channel through which the cross-border concession was brokered.
+              </p>
+            </div>
+          </div>
+
+          {/* The IPO Math */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 mb-6">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              The IPO Math
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Ivanhoe Atlantic is targeting an <strong>ASX listing</strong> with a raise of <strong>A$200M&ndash;A$300M</strong> (~US$130M&ndash;$190M). If Rose Lake holds founder stock or early advisory shares, a <strong>pre-IPO mark-to-market</strong> of those shares would explain the jump to $25 million on paper.
+            </p>
+            <div className="bg-red-50 rounded-xl p-5 border border-red-200">
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <p className="text-red-800 text-sm font-medium">
+                  The IPO has been <strong>delayed to late 2025/2026</strong>. Until shares actually trade on a public exchange, the wealth is entirely theoretical&mdash;there is no market, no liquidity, and no buyer at the marked price.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* eStCru: Same Pattern, Smaller Scale */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 mb-6">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              </div>
+              eStCru: Same Pattern, Smaller Scale
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4 mb-4">
+              <div className="bg-slate-50 rounded-lg p-4">
+                <p className="text-slate-500 text-xs uppercase tracking-wide mb-1">2023 Valuation</p>
+                <p className="text-slate-900 font-bold text-xl">$15k &ndash; $50k</p>
+              </div>
+              <div className="bg-slate-50 rounded-lg p-4">
+                <p className="text-slate-500 text-xs uppercase tracking-wide mb-1">2024 Valuation</p>
+                <p className="text-red-600 font-bold text-xl">$1M &ndash; $5M</p>
+              </div>
+            </div>
+            <p className="text-slate-700 text-sm">
+              The wine venture (eStCru LLC) follows the same playbook: a dramatic valuation markup year-over-year, with <strong>no reported income</strong> to support the new figure&mdash;and <strong>active litigation</strong> (Mohd v. eStCru) alleging the firm cannot pay its debts. A company allegedly unable to meet its obligations is simultaneously marked at $1M&ndash;$5M on congressional disclosures.
+            </p>
+          </div>
+
+          {/* The Bottom Line */}
+          <div className="bg-slate-900 rounded-2xl p-6 sm:p-8">
+            <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span className="text-red-400">The Bottom Line</span>
+            </h3>
+            <p className="text-slate-300 leading-relaxed">
+              The $25 million valuation is a <strong className="text-white">&quot;paper tiger.&quot;</strong> It rests on mark-to-model equity in a pre-IPO mining company that has never traded publicly. If the Ivanhoe Atlantic IPO fails, gets further delayed, or is blocked over <strong className="text-white">Chinese ownership concerns</strong> raised by the House Select Committee on China, Rose Lake&apos;s reported value could <strong className="text-red-400">revert to zero</strong>&mdash;taking the household&apos;s headline net worth with it.
+            </p>
           </div>
         </div>
       </section>
@@ -486,9 +688,11 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 mb-2">Wine Investment Fraud Allegations</h3>
-                  <p className="text-slate-600 text-sm mb-3">D.C. restaurateur invested $300,000 in eStCru LLC with a contractual guarantee of 200% return within 18 months. The firm repaid principal but allegedly failed to pay the $600k profit.</p>
-                  <p className="text-red-700 text-sm font-medium">A guaranteed 200% return is a hallmark of financial distress or fraudulent inducement.</p>
+                  <h3 className="font-semibold text-slate-900 mb-2">Wine investment — Mohd v. eStCru (allegations)</h3>
+                  <p className="text-slate-600 text-sm mb-3">
+                    California Superior Court case <strong>No. 23-CV010043</strong> (Naeem Mohd v. eStCru LLC et al.): plaintiff alleges a <strong>$300,000</strong> investment with a contract calling for a <strong>200% return within 18 months</strong>; principal was reportedly returned while profit remained disputed.
+                  </p>
+                  <p className="text-red-700 text-sm font-medium">Courts have not finally resolved the claims; the structure of the promised return is what drew press and analyst attention.</p>
                 </div>
               </div>
             </div>
@@ -501,9 +705,11 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 mb-2">Cannabis Fund Allegations</h3>
-                  <p className="text-slate-600 text-sm mb-3">Investors allege Will Hailer (Rose Lake co-founder) raised $3.5 million for South Dakota cannabis operations but failed to deploy or return the funds.</p>
-                  <p className="text-red-700 text-sm font-medium">When investors demanded their money, Hailer allegedly claimed the funds were frozen by OFAC - a highly implausible excuse for a domestic cannabis fund.</p>
+                  <h3 className="font-semibold text-slate-900 mb-2">Cannabis fund — Badlands / eSt (allegations)</h3>
+                  <p className="text-slate-600 text-sm mb-3">
+                    Investors filed in <strong>Hennepin County, Minnesota</strong>, alleging that roughly <strong>$3.5 million</strong> raised for South Dakota cannabis operations was not deployed or returned as promised. Complaints describe an <strong>OFAC freeze</strong> explanation that plaintiffs dispute.
+                  </p>
+                  <p className="text-red-700 text-sm font-medium">These are unproven allegations in civil pleadings; outcomes may change as cases progress.</p>
                 </div>
               </div>
             </div>
@@ -531,9 +737,11 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 mb-2">Voizzit Information Technology - Bankruptcy Contempt</h3>
-                  <p className="text-slate-600 text-sm mb-3">The Chapter 11 Trustee filed a motion holding the defendants in contempt of court for their conduct during bankruptcy proceedings.</p>
-                  <p className="text-red-700 text-sm font-medium">The Trustee characterized the defendants as &quot;arrogantly defiant&quot; of court orders.</p>
+                  <h3 className="font-semibold text-slate-900 mb-2">Voizzit — Delaware bankruptcy (allegations)</h3>
+                  <p className="text-slate-600 text-sm mb-3">
+                    Chapter 11 proceedings in <strong>U.S. Bankruptcy Court (D. Del.)</strong> generated contempt motions and sharp trustee language about compliance with court orders. Filings in that docket have tied other Hailer/Mynett-related entities into a broader paper trail.
+                  </p>
+                  <p className="text-red-700 text-sm font-medium">Read the docket for exact quotes and current status; bankruptcy litigation moves quickly.</p>
                 </div>
               </div>
             </div>
@@ -576,6 +784,13 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-red-400 mb-3">4. The &quot;Structuring Legislation&quot; Service</h3>
               <p className="text-slate-300 text-sm">Rose Lake Capital&apos;s website advertised &quot;structuring legislation&quot; as a service to clients. In the context of a firm owned by a congressional spouse, this is a direct admission of monetizing legislative influence.</p>
             </div>
+
+            <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
+              <h3 className="text-lg font-semibold text-red-400 mb-3">5. Paper wealth vs. cash and IPO risk</h3>
+              <p className="text-slate-300 text-sm">
+                Disclosure jumps align with <strong>mark-to-model equity</strong> in private companies (especially pre-IPO mining stock), not with steady partnership distributions. If listing plans slip or China/geopolitics scuttle the story, headline net worth figures can move sharply—while civil cases still turn on cash and credibility.
+              </p>
+            </div>
           </div>
 
           <div className="mt-12 bg-white/5 rounded-xl p-6 sm:p-8 border border-white/10 text-center">
@@ -605,31 +820,39 @@ export default function Home() {
           </div>
 
           <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
-            <div className="grid sm:grid-cols-2 gap-4 text-sm">
+            <ul className="space-y-3 text-sm">
               {[
-                "House.gov - 2024 Financial Disclosure (Rep. Omar)",
-                "House.gov - 2023 Financial Disclosure (Rep. Omar)",
-                "House.gov - 2022 Financial Disclosure (Rep. Omar)",
-                "Fox News - Ilhan Omar's net worth jumps to $30 million",
-                "Wine-Searcher - Congresswoman's Husband in Alleged Wine Fraud",
-                "American Experiment - Omar's husband linked to South Dakota lawsuit",
-                "Rep. Moolenaar (House Select Committee on China) - Letter to State Dept",
-                "Mining Weekly - US lawmaker raises concerns about Ivanhoe Atlantic's China ties",
-                "Ivanhoe Atlantic - About Us / Official Website",
-                "Mining Technology - Ivanhoe Atlantic IPO Coverage",
-                "Sharecafe - Ivanhoe Atlantic Secures Key Railway Approval",
-                "Verita Global - Voizzit Bankruptcy Filings & Witness List",
-                "FEC Records - Campaign Disbursements to E Street Group",
-                "FCC - CITIC National Security Designation",
-                "Uyghur Forced Labor Prevention Act - Zijin Mining Entity List (2025)",
-                "Rose Lake Capital Website (Archived)",
-              ].map((source, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-2 rounded hover:bg-slate-50">
-                  <span className="text-red-600 font-mono text-xs mt-0.5">[{idx + 1}]</span>
-                  <span className="text-slate-600">{source}</span>
-                </div>
+                { label: "House Clerk — 2024 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10068415.pdf" },
+                { label: "House Clerk — 2023 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2023/10060937.pdf" },
+                { label: "House Clerk — 2022 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2022/10053193.pdf" },
+                { label: "Fox News — coverage of disclosure / net worth reporting", href: "https://www.foxnews.com/politics/omars-net-worth-jumps-much-30m-new-disclosure-claiming-not-millionaire" },
+                { label: "Wine-Searcher — eStCru / investment dispute reporting", href: "https://www.wine-searcher.com/m/2024/06/congresswomans-husband-in-alleged-wine-fraud" },
+                { label: "American Experiment — South Dakota cannabis litigation context", href: "https://www.americanexperiment.org/ilhan-omars-current-husband-linked-to-south-dakota-weed-lawsuit/" },
+                { label: "Mining Weekly — U.S. lawmaker concerns re Ivanhoe Atlantic & China", href: "https://www.miningweekly.com/article/us-lawmaker-raises-concerns-about-miner-ivanhoe-atlantics-ties-with-china-2025-12-10" },
+                { label: "Ivanhoe Atlantic — corporate overview", href: "https://ivanhoeatlantic.com/about-us/" },
+                { label: "Mining Technology — ASX IPO coverage", href: "https://www.mining-technology.com/news/ivanhoe-atlantic-australian-ipo/" },
+                { label: "Sharecafe — railway / access reporting", href: "https://www.sharecafe.com.au/2025/12/19/ivanhoe-atlantic-secures-key-railway-approval/" },
+                { label: "Australian Mining Review — IPO timing coverage", href: "https://australianminingreview.com.au/news/ivanhoe-delays-asx-ipo/" },
+                { label: "St. Louis American — political response citing Reformer reporting", href: "https://www.stlamerican.com/online-features/press-releases/don-samuels-responds-to-minnesota-reformer-article-detailing-self-dealing-missing-funds-and-lack-of-transparency-by-his-opponent-rep-ilhan-omar-and-her-husband-tim-mynett/" },
+              ].map((source) => (
+                <li key={source.href} className="flex items-start gap-2">
+                  <span className="text-red-600 mt-1" aria-hidden>
+                    &#8226;
+                  </span>
+                  <a
+                    href={source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-700 hover:text-red-600 underline underline-offset-2 break-all"
+                  >
+                    {source.label}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
+            <p className="text-slate-500 text-xs mt-6">
+              Additional primary materials (FEC exports, full bankruptcy dockets, archived Rose Lake pages) can be bookmarked as you verify claims; this list mirrors commonly cited public entry points.
+            </p>
           </div>
         </div>
       </section>

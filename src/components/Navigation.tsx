@@ -9,10 +9,13 @@ interface NavigationProps {
 
 const navLinks = [
   { href: "#overview", label: "Overview" },
+  { href: "#players", label: "Players" },
   { href: "#connection", label: "The Links" },
   { href: "#money", label: "Money Trail" },
+  { href: "#papertiger", label: "Paper Tiger" },
   { href: "#conflict", label: "Conflicts" },
   { href: "#china", label: "China Ties" },
+  { href: "#redflags", label: "Red Flags" },
   { href: "#sources", label: "Sources" },
 ];
 

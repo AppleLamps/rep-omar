@@ -1,9 +1,9 @@
 const financialData = [
-  { year: "2022", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "None", analysis: "Dormant/Shell status", highlight: false },
-  { year: "2023", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "$15k - $50k", analysis: "Modest consulting fees", highlight: false },
-  { year: "2024", asset: "Rose Lake Capital", value: "$5M - $25M", income: "None", analysis: "REVALUATION EVENT", highlight: true },
-  { year: "2023", asset: "eStCru LLC", value: "$15k - $50k", income: "$201 - $1,000", analysis: "Struggling micro-business", highlight: false },
-  { year: "2024", asset: "eStCru LLC", value: "$1M - $5M", income: "None", analysis: "Suspicious markup", highlight: true },
+  { year: "2022", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "None", type: "Partnership", analysis: "Dormant / shell status", highlight: false },
+  { year: "2023", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "$15k - $50k", type: "Partnership", analysis: "Modest consulting fees; no asset growth", highlight: false },
+  { year: "2024", asset: "Rose Lake Capital", value: "$5M - $25M", income: "None", type: "Partnership", analysis: "Large markup with no reported income (illiquid / unrealized)", highlight: true },
+  { year: "2023", asset: "eStCru LLC", value: "$15k - $50k", income: "$201 - $1,000", type: "Partnership", analysis: "Small disclosed business", highlight: false },
+  { year: "2024", asset: "eStCru LLC", value: "$1M - $5M", income: "None", type: "Partnership", analysis: "Large markup with no reported income", highlight: true },
 ];
 
 export default function FinancialTable() {
@@ -26,6 +26,10 @@ export default function FinancialTable() {
                 <span className="text-slate-500">Income: </span>
                 <span className="text-slate-700">{row.income}</span>
               </div>
+              <div className="col-span-2">
+                <span className="text-slate-500">Type: </span>
+                <span className="text-slate-700">{row.type}</span>
+              </div>
             </div>
             <p className={`text-sm mt-2 ${row.highlight ? "font-semibold text-red-600" : "text-slate-500 italic"}`}>{row.analysis}</p>
           </div>
@@ -41,6 +45,7 @@ export default function FinancialTable() {
               <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Asset</th>
               <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Value Range</th>
               <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Income</th>
+              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Type</th>
               <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Analysis</th>
             </tr>
           </thead>
@@ -51,6 +56,7 @@ export default function FinancialTable() {
                 <td className="px-6 py-4 text-sm text-slate-900 font-medium">{row.asset}</td>
                 <td className={`px-6 py-4 text-sm ${row.highlight ? "font-bold text-red-600" : "text-slate-600"}`}>{row.value}</td>
                 <td className="px-6 py-4 text-sm text-slate-600">{row.income}</td>
+                <td className="px-6 py-4 text-sm text-slate-600">{row.type}</td>
                 <td className={`px-6 py-4 text-sm ${row.highlight ? "font-semibold text-red-600" : "text-slate-500 italic"}`}>{row.analysis}</td>
               </tr>
             ))}

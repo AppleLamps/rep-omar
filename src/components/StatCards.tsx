@@ -1,8 +1,8 @@
 const stats = [
-  { value: "$2.9M", label: "Campaign Funds to Husband's Firm" },
-  { value: "3,500%", label: "Spouse's Wealth Increase" },
-  { value: "$30M", label: "Household Net Worth" },
-  { value: "Africa", label: "Committee With Direct Conflict" },
+  { value: "$2.9M", label: "Campaign funds to E Street Group (approx.)" },
+  { value: "3,500%", label: "Reported spike in spouse asset disclosure range" },
+  { value: "$6–30M", label: "Household assets (2025 disclosure range, press)" },
+  { value: "Africa", label: "HFAC subcommittee with direct overlap" },
 ];
 
 export default function StatCards() {
