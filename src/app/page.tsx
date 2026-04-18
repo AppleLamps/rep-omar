@@ -136,7 +136,7 @@ export default function Home() {
                   <svg className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
-                  <p className="text-slate-600">Disclosures show Rose Lake/eStCru stakes moving from <strong>nominal to multi-million-dollar ranges</strong> as valuations were updated—wealth is largely <strong>illiquid</strong> until a sale or IPO</p>
+                  <p className="text-slate-600">Disclosures show Rose Lake/eStCru stakes moving from <strong>nominal to multi-million-dollar ranges</strong> as valuations were updated... wealth is largely <strong>illiquid</strong> until a sale or IPO</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,7 +211,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm">
-                  <strong>Chairman of Ivanhoe Atlantic</strong> while associated with Rose Lake—bridging the D.C. advisory bench to the Guinea/Liberia iron-ore story and regional diplomacy.
+                  <strong>Chairman of Ivanhoe Atlantic</strong> while associated with Rose Lake... bridging the D.C. advisory bench to the Guinea/Liberia iron-ore story and regional diplomacy.
                 </p>
               </div>
               <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -224,7 +224,7 @@ export default function Home() {
                     <p className="text-slate-500 text-sm">Former U.S. Senator (MT); former Ambassador to China</p>
                   </div>
                 </div>
-                <p className="text-slate-600 text-sm">High-level U.S.–China and Washington weight—useful for critical-minerals narratives and institutional credibility.</p>
+                <p className="text-slate-600 text-sm">High-level U.S.–China and Washington weight... useful for critical-minerals narratives and institutional credibility.</p>
               </div>
               <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                 <div className="flex items-center gap-4 mb-3">
@@ -236,7 +236,7 @@ export default function Home() {
                     <p className="text-slate-500 text-sm">Former U.S. Representative (MN); former Chair, House Agriculture</p>
                   </div>
                 </div>
-                <p className="text-slate-600 text-sm">Deep <strong>USDA / farm-bill</strong> context—often tied to hemp and cannabis regulatory angles in the upper Midwest.</p>
+                <p className="text-slate-600 text-sm">Deep <strong>USDA / farm-bill</strong> context... often tied to hemp and cannabis regulatory angles in the upper Midwest.</p>
               </div>
               <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                 <div className="flex items-center gap-4 mb-3">
@@ -257,7 +257,7 @@ export default function Home() {
           <div className="mt-14">
             <h3 className="text-xl font-semibold text-slate-900 mb-4 text-center">Related entities (public records &amp; litigation)</h3>
             <p className="text-slate-600 text-center mb-8 max-w-2xl mx-auto text-sm">
-              Rose Lake sits at the center of a cluster of LLCs and funds named in civil cases and press coverage—not a single ticker, but a web of vehicles.
+              Rose Lake sits at the center of a cluster of LLCs and funds named in civil cases and press coverage... not a single ticker, but a web of vehicles.
             </p>
             <div className="overflow-x-auto rounded-xl border border-slate-200">
               <table className="w-full text-sm">
@@ -372,14 +372,14 @@ export default function Home() {
               </div>
               <div className="bg-green-50 rounded-xl p-5 border border-green-100">
                 <p className="text-slate-700 mb-4">
-                  Rose Lake acquired equity in <strong>Ivanhoe Atlantic</strong>, focused on the <strong>Kon Kweni</strong> high-grade iron ore asset (Nimba region) in <strong className="text-green-700">Guinea</strong>, with export logistics hinging on <strong>Liberian rail and port</strong> access—precisely the kind of cross-border deal that turns on diplomacy and infrastructure.
+                  Rose Lake acquired equity in <strong>Ivanhoe Atlantic</strong>, focused on the <strong>Kon Kweni</strong> high-grade iron ore asset (Nimba region) in <strong className="text-green-700">Guinea</strong>, with export logistics hinging on <strong>Liberian rail and port</strong> access... precisely the kind of cross-border deal that turns on diplomacy and infrastructure.
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-slate-700 text-sm">
                   <li>
-                    <strong>Rail &quot;unlock&quot;:</strong> Press and company reporting describe a <strong>concession / access agreement</strong> in Liberia that allows use of existing rail to the coast—reducing the &quot;stranded asset&quot; problem that held back prior owners.
+                    <strong>Rail &quot;unlock&quot;:</strong> Press and company reporting describe a <strong>concession / access agreement</strong> in Liberia that allows use of existing rail to the coast... reducing the &quot;stranded asset&quot; problem that held back prior owners.
                   </li>
                   <li>
-                    <strong>Commodity story:</strong> Ultra-high-grade ore is marketed in part for <strong>green steel</strong> / DRI (direct reduced iron) as steelmakers decarbonize—supporting a bullish pre-IPO narrative.
+                    <strong>Commodity story:</strong> Ultra-high-grade ore is marketed in part for <strong>green steel</strong> / DRI (direct reduced iron) as steelmakers decarbonize... supporting a bullish pre-IPO narrative.
                   </li>
                   <li>
                     <strong>Liquidity path:</strong> Ivanhoe Atlantic has targeted an <strong>ASX</strong> listing; press has cited raise sizes on the order of <strong>A$200–300 million</strong> (timing subject to market conditions and regulatory process).
@@ -388,7 +388,7 @@ export default function Home() {
               </div>
               <div className="mt-4 p-4 bg-slate-900 rounded-lg">
                 <p className="text-slate-300 text-sm">
-                  <strong className="text-white">Key Connection:</strong> Dr. J. Peter Pham, former U.S. Special Envoy for the Sahel &amp; Great Lakes Regions, has been described as <strong>Chairman of Ivanhoe Atlantic</strong> while linked to Rose Lake&apos;s advisory circle—connecting African diplomacy to the firm&apos;s largest reported bet.
+                  <strong className="text-white">Key Connection:</strong> Dr. J. Peter Pham, former U.S. Special Envoy for the Sahel &amp; Great Lakes Regions, has been described as <strong>Chairman of Ivanhoe Atlantic</strong> while linked to Rose Lake&apos;s advisory circle... connecting African diplomacy to the firm&apos;s largest reported bet.
                 </p>
               </div>
             </div>
@@ -688,7 +688,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 mb-2">Wine investment — Mohd v. eStCru (allegations)</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">Wine investment ...  Mohd v. eStCru (allegations)</h3>
                   <p className="text-slate-600 text-sm mb-3">
                     California Superior Court case <strong>No. 23-CV010043</strong> (Naeem Mohd v. eStCru LLC et al.): plaintiff alleges a <strong>$300,000</strong> investment with a contract calling for a <strong>200% return within 18 months</strong>; principal was reportedly returned while profit remained disputed.
                   </p>
@@ -705,7 +705,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 mb-2">Cannabis fund — Badlands / eSt (allegations)</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">Cannabis fund ...  Badlands / eSt (allegations)</h3>
                   <p className="text-slate-600 text-sm mb-3">
                     Investors filed in <strong>Hennepin County, Minnesota</strong>, alleging that roughly <strong>$3.5 million</strong> raised for South Dakota cannabis operations was not deployed or returned as promised. Complaints describe an <strong>OFAC freeze</strong> explanation that plaintiffs dispute.
                   </p>
@@ -737,7 +737,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 mb-2">Voizzit — Delaware bankruptcy (allegations)</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">Voizzit ...  Delaware bankruptcy (allegations)</h3>
                   <p className="text-slate-600 text-sm mb-3">
                     Chapter 11 proceedings in <strong>U.S. Bankruptcy Court (D. Del.)</strong> generated contempt motions and sharp trustee language about compliance with court orders. Filings in that docket have tied other Hailer/Mynett-related entities into a broader paper trail.
                   </p>
@@ -788,7 +788,7 @@ export default function Home() {
             <div className="bg-red-500/10 rounded-xl p-5 sm:p-6 border border-red-500/20">
               <h3 className="text-lg font-semibold text-red-400 mb-3">5. Paper wealth vs. cash and IPO risk</h3>
               <p className="text-slate-300 text-sm">
-                Disclosure jumps align with <strong>mark-to-model equity</strong> in private companies (especially pre-IPO mining stock), not with steady partnership distributions. If listing plans slip or China/geopolitics scuttle the story, headline net worth figures can move sharply—while civil cases still turn on cash and credibility.
+                Disclosure jumps align with <strong>mark-to-model equity</strong> in private companies (especially pre-IPO mining stock), not with steady partnership distributions. If listing plans slip or China/geopolitics scuttle the story, headline net worth figures can move sharply... while civil cases still turn on cash and credibility.
               </p>
             </div>
           </div>
@@ -822,18 +822,18 @@ export default function Home() {
           <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
             <ul className="space-y-3 text-sm">
               {[
-                { label: "House Clerk — 2024 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10068415.pdf" },
-                { label: "House Clerk — 2023 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2023/10060937.pdf" },
-                { label: "House Clerk — 2022 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2022/10053193.pdf" },
-                { label: "Fox News — coverage of disclosure / net worth reporting", href: "https://www.foxnews.com/politics/omars-net-worth-jumps-much-30m-new-disclosure-claiming-not-millionaire" },
-                { label: "Wine-Searcher — eStCru / investment dispute reporting", href: "https://www.wine-searcher.com/m/2024/06/congresswomans-husband-in-alleged-wine-fraud" },
-                { label: "American Experiment — South Dakota cannabis litigation context", href: "https://www.americanexperiment.org/ilhan-omars-current-husband-linked-to-south-dakota-weed-lawsuit/" },
-                { label: "Mining Weekly — U.S. lawmaker concerns re Ivanhoe Atlantic & China", href: "https://www.miningweekly.com/article/us-lawmaker-raises-concerns-about-miner-ivanhoe-atlantics-ties-with-china-2025-12-10" },
-                { label: "Ivanhoe Atlantic — corporate overview", href: "https://ivanhoeatlantic.com/about-us/" },
-                { label: "Mining Technology — ASX IPO coverage", href: "https://www.mining-technology.com/news/ivanhoe-atlantic-australian-ipo/" },
-                { label: "Sharecafe — railway / access reporting", href: "https://www.sharecafe.com.au/2025/12/19/ivanhoe-atlantic-secures-key-railway-approval/" },
-                { label: "Australian Mining Review — IPO timing coverage", href: "https://australianminingreview.com.au/news/ivanhoe-delays-asx-ipo/" },
-                { label: "St. Louis American — political response citing Reformer reporting", href: "https://www.stlamerican.com/online-features/press-releases/don-samuels-responds-to-minnesota-reformer-article-detailing-self-dealing-missing-funds-and-lack-of-transparency-by-his-opponent-rep-ilhan-omar-and-her-husband-tim-mynett/" },
+                { label: "House Clerk ...  2024 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10068415.pdf" },
+                { label: "House Clerk ...  2023 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2023/10060937.pdf" },
+                { label: "House Clerk ...  2022 financial disclosure (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2022/10053193.pdf" },
+                { label: "Fox News ...  coverage of disclosure / net worth reporting", href: "https://www.foxnews.com/politics/omars-net-worth-jumps-much-30m-new-disclosure-claiming-not-millionaire" },
+                { label: "Wine-Searcher ...  eStCru / investment dispute reporting", href: "https://www.wine-searcher.com/m/2024/06/congresswomans-husband-in-alleged-wine-fraud" },
+                { label: "American Experiment ...  South Dakota cannabis litigation context", href: "https://www.americanexperiment.org/ilhan-omars-current-husband-linked-to-south-dakota-weed-lawsuit/" },
+                { label: "Mining Weekly ...  U.S. lawmaker concerns re Ivanhoe Atlantic & China", href: "https://www.miningweekly.com/article/us-lawmaker-raises-concerns-about-miner-ivanhoe-atlantics-ties-with-china-2025-12-10" },
+                { label: "Ivanhoe Atlantic ...  corporate overview", href: "https://ivanhoeatlantic.com/about-us/" },
+                { label: "Mining Technology ...  ASX IPO coverage", href: "https://www.mining-technology.com/news/ivanhoe-atlantic-australian-ipo/" },
+                { label: "Sharecafe ...  railway / access reporting", href: "https://www.sharecafe.com.au/2025/12/19/ivanhoe-atlantic-secures-key-railway-approval/" },
+                { label: "Australian Mining Review ...  IPO timing coverage", href: "https://australianminingreview.com.au/news/ivanhoe-delays-asx-ipo/" },
+                { label: "St. Louis American ...  political response citing Reformer reporting", href: "https://www.stlamerican.com/online-features/press-releases/don-samuels-responds-to-minnesota-reformer-article-detailing-self-dealing-missing-funds-and-lack-of-transparency-by-his-opponent-rep-ilhan-omar-and-her-husband-tim-mynett/" },
               ].map((source) => (
                 <li key={source.href} className="flex items-start gap-2">
                   <span className="text-red-600 mt-1" aria-hidden>

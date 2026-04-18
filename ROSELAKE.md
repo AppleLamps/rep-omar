@@ -34,7 +34,7 @@ domestic regulated industries such as cannabis and viticulture.
 The investigation synthesizes data from congressional financial filings, civil litigation dockets
 in multiple jurisdictions (Minnesota, California, Delaware), corporate registries, mining
 prospectuses, and archived digital footprints. A primary focus is placed on the firm's explosive
-valuation growth—a 3,500% increase in asset value over a single reporting cycle—and its
+valuation growth... a 3,500% increase in asset value over a single reporting cycle... and its
 correlation with the pre-IPO activities of **Ivanhoe Atlantic** , a critical minerals development
 company.^1 Furthermore, the report examines a disturbing pattern of litigation alleging fraud,
 breach of contract, and misappropriation of investor funds by the firm’s principals, raising
@@ -74,8 +74,8 @@ Operational documents and legal filings indicate that Rose Lake bills itself as 
 company" or implies a social impact mandate.^6 In the contemporary venture capital
 landscape, this designation is often utilized to attract institutional capital from foundations or
 politically aligned investors (LPs) who prioritize ESG (Environmental, Social, and Governance)
-metrics. However, forensic analysis of the firm's actual activities—ranging from high-yield
-distressed debt in cannabis to extractive industries in West Africa—suggests a divergence
+metrics. However, forensic analysis of the firm's actual activities... ranging from high-yield
+distressed debt in cannabis to extractive industries in West Africa... suggests a divergence
 between this branding and the firm's aggressive profit-seeking behavior. The "public benefit"
 label appears to function primarily as a reputational shield, deflecting scrutiny from the firm's
 involvement in industries typically associated with high regulatory risk and environmental
@@ -101,7 +101,7 @@ arc of the Rose Lake story.
 ● Professional Origins: Mynett spent nearly two years as a partner at the E Street Group ,
 a political consultancy. During the 2020 election cycle, this firm was the primary vendor
 for Rep. Ilhan Omar’s campaign, receiving approximately $2.9 million in
-disbursements—a figure representing roughly 80% of the firm's revenue during that
+disbursements... a figure representing roughly 80% of the firm's revenue during that
 period.^4 This transfer of campaign funds to a spouse's firm (though Mynett and Omar
 married after the relationship began) was the subject of an FEC complaint, which was
 later dismissed but remains a foundational element of his capital accumulation.^5
@@ -205,7 +205,7 @@ Atlantic to Mynett and Hailer, allowing them to acquire early equity in exchange
 their political network to support the project’s "U.S.-aligned" narrative in Congress.
 
 
-## PART II: THE CAPITAL NEXUS — IVANHOE ATLANTIC &
+## PART II: THE CAPITAL NEXUS ...  IVANHOE ATLANTIC &
 
 ## THE IRON ORE PLAY
 
@@ -219,7 +219,7 @@ $25,000,000**.^7
 Crucially, the 2024 filing lists **"None"** under income for this asset. In forensic accounting
 terms, high asset value combined with zero income is the signature of **unrealized capital
 gains** in an illiquid asset. The firm owns something that has been "marked up" on
-paper—likely due to a new external valuation event—but has not yet been sold. The evidence
+paper... likely due to a new external valuation event... but has not yet been sold. The evidence
 overwhelmingly points to this asset being equity in **Ivanhoe Atlantic**.
 
 ### 2.1 Profile: Ivanhoe Atlantic
@@ -249,7 +249,7 @@ incumbent rail operator, ArcelorMittal.^14
 ```
 #### 2.1.2 The Strategic "Unlock": The Liberian Rail Corridor
 
-The explosive value creation in Ivanhoe Atlantic—and by extension, Rose Lake—stemmed from
+The explosive value creation in Ivanhoe Atlantic... and by extension, Rose Lake... stemmed from
 
 
 a diplomatic breakthrough. In late 2024/early 2025, Ivanhoe Atlantic secured a **Concession
@@ -300,7 +300,7 @@ million. However, until the IPO executes (delayed to late 2025/2026), this wealt
 theoretical and highly sensitive to market volatility.^14
 ```
 
-## PART III: THE OPERATING COMPANIES — WINE, WEED,
+## PART III: THE OPERATING COMPANIES ...  WINE, WEED,
 
 ## AND LITIGATION
 
@@ -360,7 +360,7 @@ attempting to "fleece the Estate".^19
 ● Connection: The witness list for these proceedings calls both Hailer and Mynett, linking
 the financial mismanagement across the cannabis, wine, and technology portfolios.^20
 ```
-## PART IV: THE POLITICAL ECONOMY — CONFLICTS
+## PART IV: THE POLITICAL ECONOMY ...  CONFLICTS
 
 ## AND LEGISLATION
 
@@ -377,7 +377,7 @@ as a service offered to clients.^1
 ```
 ● Interpretation: In the context of a firm owned by a congressional spouse, this is a
 flagrant admission of influence peddling. It implies that the firm can write favorable
-laws—or block unfavorable ones—on behalf of its portfolio companies.
+laws... or block unfavorable ones... on behalf of its portfolio companies.
 ● Removal: The phrase was quietly removed after public scrutiny, but it establishes the
 firm's intent to monetize the legislative process.
 ```
@@ -511,7 +511,7 @@ relatively small sums ($600k, $1M). If the principals were truly liquid multi-mi
 they would likely settle these nuisance suits to avoid reputational damage. The fact that
 they are fighting them suggests a lack of liquid cash.
 ● Debt Load: Rep. Omar’s disclosures still show student loan debt and credit card debt,
-which is incongruous with a household worth $30 million—unless that wealth is entirely
+which is incongruous with a household worth $30 million... unless that wealth is entirely
 trapped in illiquid Rose Lake shares.^3
 ```
 ## PART VI: CONCLUSION AND RISK ASSESSMENT
