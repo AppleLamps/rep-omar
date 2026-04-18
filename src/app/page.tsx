@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Navigation, BackToTop, Hero, StatCards, FinancialTable, Footer, ConnectionMap, DisclaimerBanner } from "@/components";
+import { Navigation, BackToTop, Hero, StatCards, FinancialTable, Footer, ConnectionMap, DisclaimerBanner, UpdatesBanner } from "@/components";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("overview");
@@ -57,6 +57,7 @@ export default function Home() {
       <Navigation activeSection={activeSection} scrollProgress={scrollProgress} />
       <BackToTop show={showBackToTop} />
       <Hero />
+      <UpdatesBanner />
       <DisclaimerBanner />
       <StatCards />
 
@@ -250,6 +251,88 @@ export default function Home() {
                 </div>
                 <p className="text-slate-600 text-sm">Reinforces local <strong>Minnesota</strong> networks and progressive &quot;green&quot; positioning for the firm&apos;s brand.</p>
               </div>
+
+              {/* ── CORRECTED ADVISORS (April 2026 update — names verified against public sources) ── */}
+              <div className="bg-slate-50 rounded-xl p-5 border border-amber-300">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-violet-800 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    AH
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Alex Hoffman</h4>
+                    {/* TODO: credential line pending verification */}
+                    <p className="text-slate-500 text-sm">Former counsel &amp; campaign finance attorney, Perkins Coie; DNC-adjacent work</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  Founder, <strong>C-Street Strategies</strong>; DNC Chief of Staff to National Finance Chair during Tom Perez era.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 rounded-xl p-5 border border-amber-300">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    KM
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Keith Mestrich</h4>
+                    {/* TODO: credential line pending verification */}
+                    <p className="text-slate-500 text-sm">Former President &amp; CEO, Amalgamated Bank (2014–2020)</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  Brings <strong>labor-aligned financial institution</strong> background and Democratic donor-network credibility to the advisory bench.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 rounded-xl p-5 border border-amber-300">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-500 to-sky-800 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    JP
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Justin Pratt</h4>
+                    {/* TODO: credential line pending verification */}
+                    <p className="text-slate-500 text-sm">Former Senate staff; founder, Pratt Policy</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  Senate legislative background adds <strong>upper-chamber access</strong> to the firm&apos;s advisory profile.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 rounded-xl p-5 border border-amber-300">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    SH
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Sheila Healy</h4>
+                    {/* TODO: credential line pending verification */}
+                    <p className="text-slate-500 text-sm">Former Chief of Staff to Rep. Nick Joe Rahall II (D-WV)</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  Deep <strong>House member-relations</strong> experience; former Rahall CoS during his long tenure on House Natural Resources and Transportation.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 rounded-xl p-5 border border-amber-300">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-800 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    WD
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">William &quot;Bill&quot; Derrough</h4>
+                    {/* TODO: credential line pending verification */}
+                    <p className="text-slate-500 text-sm">Former Treasurer, Democratic National Committee (2017–2021); Co-Head, Recapitalization &amp; Restructuring, Moelis &amp; Company</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  High-level <strong>DNC finance authority</strong> and restructuring expertise; ties to party leadership during the Perez chairmanship.
+                </p>
+              </div>
+              {/* ── END CORRECTED ADVISORS ── */}
             </div>
           </div>
 
@@ -460,6 +543,86 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* ── POST-PUBLICATION UPDATE: Sworn Testimony vs. Disclosure ── */}
+          <div className="rounded-2xl border-2 border-amber-400 bg-amber-50 p-6 sm:p-8 mb-6">
+            {/* Callout header */}
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-9 h-9 rounded-full bg-amber-400/30 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <span className="text-xs font-bold text-amber-800 uppercase tracking-wide">
+                  Post-Publication Update &bull; April 2026
+                </span>
+                <h3 className="text-lg font-bold text-slate-900 mt-0.5">
+                  Sworn Testimony vs. Disclosure Filing
+                </h3>
+              </div>
+            </div>
+
+            {/* Two-column comparison */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-5">
+              {/* Left: Sworn testimony */}
+              <div className="bg-white rounded-xl p-5 border border-red-200">
+                <p className="text-xs font-semibold text-red-700 uppercase tracking-wide mb-3">
+                  Sworn Testimony — Nov 21, 2024
+                </p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-0.5 flex-shrink-0">&#8226;</span>
+                    <span>Combined bank balance: <strong className="text-red-700">&ldquo;approximately $42.44&rdquo;</strong></span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-0.5 flex-shrink-0">&#8226;</span>
+                    <span><strong>&ldquo;No AUM as a legal term of art&rdquo;</strong></span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-0.5 flex-shrink-0">&#8226;</span>
+                    <span>Combined assets <strong>under $1 million</strong></span>
+                  </li>
+                </ul>
+                <p className="text-slate-500 text-xs mt-4 italic leading-snug">
+                  Source: U.S. Bankruptcy Court D. Del., Voizzit Chapter 11
+                  Section&nbsp;341 examination transcript of E.J. Hailer
+                </p>
+              </div>
+
+              {/* Right: Financial Disclosure */}
+              <div className="bg-white rounded-xl p-5 border border-slate-200">
+                <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-3">
+                  Financial Disclosure — May 2025
+                </p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-slate-400 mt-0.5 flex-shrink-0">&#8226;</span>
+                    <span>
+                      Spouse&apos;s Rose Lake stake:{" "}
+                      <strong className="text-red-700">$5,000,001 – $25,000,000</strong>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-slate-400 mt-0.5 flex-shrink-0">&#8226;</span>
+                    <span>Signed under penalty of false-statement statutes</span>
+                  </li>
+                </ul>
+                <p className="text-slate-500 text-xs mt-4 italic leading-snug">
+                  Source: U.S. House Clerk, Rep. Omar 2024 Annual Financial
+                  Disclosure
+                </p>
+              </div>
+            </div>
+
+            {/* Caption */}
+            <p className="text-slate-600 text-xs leading-relaxed border-t border-amber-300 pt-4">
+              Both figures are from public records. The discrepancy between the
+              two is the factual basis of the February 2026 House Oversight
+              inquiry. Reconciliation is a matter for the committee process.
+            </p>
+          </div>
+          {/* ── END POST-PUBLICATION UPDATE ── */}
 
           {/* eStCru: Same Pattern, Smaller Scale */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 mb-6">
@@ -853,6 +1016,53 @@ export default function Home() {
             <p className="text-slate-500 text-xs mt-6">
               Additional primary materials (FEC exports, full bankruptcy dockets, archived Rose Lake pages) can be bookmarked as you verify claims; this list mirrors commonly cited public entry points.
             </p>
+
+            {/* ── April 2026 Update Sources ── */}
+            <div className="mt-8 pt-6 border-t-2 border-amber-400">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wide">
+                  April 2026 Update Sources
+                </span>
+              </div>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-600 mt-1 flex-shrink-0" aria-hidden>&#8226;</span>
+                  <span className="text-slate-700">
+                    U.S. House Committee on Oversight and Government Reform, Letter from Chairman James Comer to Rep. Ilhan Omar, February 5, 2026{" "}
+                    <span className="text-slate-400 italic">[exhibit pending upload — /exhibits/oversight-letter-2026-02-05.pdf]</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-600 mt-1 flex-shrink-0" aria-hidden>&#8226;</span>
+                  <span className="text-slate-700">
+                    U.S. Bankruptcy Court, District of Delaware, <em>In re Voizzit Information Technology LLC</em>, Chapter 11 Section 341 examination of E.J. Hailer, November 21, 2024{" "}
+                    <span className="text-slate-400 italic">[exhibit pending upload — /exhibits/hailer-341-transcript-2024-11-21.pdf]</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-600 mt-1 flex-shrink-0" aria-hidden>&#8226;</span>
+                  <span className="text-slate-700">
+                    Delaware Secretary of State, Division of Corporations, Entity Search (icis.corp.delaware.gov), file numbers{" "}
+                    <a href="https://icis.corp.delaware.gov/Ecorp/EntitySearch/NameSearch.aspx" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-red-600">
+                      6890594, 6954979, 7246289
+                    </a>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-600 mt-1 flex-shrink-0" aria-hidden>&#8226;</span>
+                  <span className="text-slate-700">
+                    District of Columbia Department of Licensing and Consumer Protection, Entity Revocation List, file C00007470247
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-600 mt-1 flex-shrink-0" aria-hidden>&#8226;</span>
+                  <span className="text-slate-700">
+                    U.S. House Clerk, Rep. Ilhan Omar Annual Financial Disclosure (filed May 2025)
+                  </span>
+                </li>
+              </ul>
+            </div>
+            {/* ── END April 2026 Update Sources ── */}
           </div>
         </div>
       </section>

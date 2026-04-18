@@ -17,6 +17,7 @@ const navLinks = [
   { href: "#china", label: "China Ties" },
   { href: "#redflags", label: "Red Flags" },
   { href: "#sources", label: "Sources" },
+  { href: "/updates", label: "Updates ↗" },
 ];
 
 export default function Navigation({ activeSection, scrollProgress }: NavigationProps) {
@@ -60,11 +61,10 @@ export default function Navigation({ activeSection, scrollProgress }: Navigation
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors ${
-                    activeSection === link.href.slice(1)
+                  className={`text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
                       ? "text-red-600 border-b-2 border-red-600 pb-1"
                       : "text-slate-600 hover:text-red-600"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -98,11 +98,10 @@ export default function Navigation({ activeSection, scrollProgress }: Navigation
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      activeSection === link.href.slice(1)
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
                         ? "bg-red-50 text-red-600"
                         : "text-slate-600 hover:bg-slate-50"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </a>
