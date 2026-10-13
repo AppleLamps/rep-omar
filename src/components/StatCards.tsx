@@ -1,8 +1,8 @@
 const stats = [
-  { value: "$2.9M", label: "Campaign funds to E Street Group (approx.)" },
-  { value: "3,500%", label: "Reported spike in spouse asset disclosure range" },
-  { value: "$6–30M", label: "Household assets (2025 disclosure range, press)" },
-  { value: "Africa", label: "HFAC subcommittee with direct overlap" },
+  { value: "$2.9M", label: "Historical campaign payments to E Street Group (approx.)" },
+  { value: "$11.25M", label: "Incoming wires to Rose Lake Inc., per sworn declaration" },
+  { value: "None", label: "Amended 2024 asset values for both businesses" },
+  { value: "$100k–1M", label: "Amended 2024 Rose Lake partnership income range" },
 ];
 
 export default function StatCards() {
