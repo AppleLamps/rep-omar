@@ -1,32 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import NoticeCard from "./NoticeCard";
 
 export default function DisclaimerBanner() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-amber-50 border-b-2 border-amber-200 print:bg-white print:border-slate-300">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex items-start gap-3">
-          <svg
-            className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <div className="flex-1">
-            <p className="text-amber-800 text-sm font-medium">
-              Important Legal Notice
-            </p>
-            <p className="text-amber-700 text-sm mt-1">
+    <NoticeCard
+      compact
+      id="legal-notice"
+      title="Important Legal Notice"
+      footer={
+        <button type="button" aria-expanded={isExpanded} aria-controls="full-disclaimer"
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="inline-flex min-h-11 items-center gap-2 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 underline underline-offset-4">
+          {isExpanded ? "Show less" : "Read full disclaimer"}
+          <span aria-hidden="true">{isExpanded ? "−" : "+"}</span>
+        </button>
+      }
+    >
+      <p>Opinion and analysis based on public records. Allegations are attributed to their sources.</p>
+      <div id="full-disclaimer" hidden={!isExpanded} className="mt-3 space-y-3 border-t border-slate-200 pt-3 text-sm leading-6">
+            <p>
               This publication contains <strong>opinion, commentary, and analysis</strong> on
               matters of public concern regarding public figures. All factual claims are based
               on publicly available sources including congressional disclosures, court records,
@@ -34,8 +30,6 @@ export default function DisclaimerBanner() {
               third parties and do not constitute assertions of guilt or wrongdoing.
             </p>
 
-            {isExpanded && (
-              <div id="full-disclaimer" className="mt-3 space-y-2 text-amber-700 text-sm border-t border-amber-200 pt-3">
                 <p>
                   <strong>Fair Comment Doctrine:</strong> The individuals discussed are public
                   figures whose publicly disclosed financial activities and official conduct are
@@ -54,20 +48,8 @@ export default function DisclaimerBanner() {
                   <strong>Corrections:</strong> Any person who believes a statement herein is
                   inaccurate may contact the author with supporting documentation for review.
                 </p>
-              </div>
-            )}
-
-            <button
-              aria-expanded={isExpanded}
-              aria-controls="full-disclaimer"
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-2 min-h-11 text-amber-800 hover:text-amber-800 text-sm font-medium underline focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded"
-            >
-              {isExpanded ? "Show less" : "Read full disclaimer"}
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
+
+    </NoticeCard>
   );
 }
