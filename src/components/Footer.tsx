@@ -101,7 +101,7 @@ export default function Footer() {
               This work is protected by copyright and may not be reproduced without permission.
             </p>
             <p className="text-slate-400 text-xs mt-2">
-              Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              Last updated: October 13, 2026
             </p>
           </div>
         </div>

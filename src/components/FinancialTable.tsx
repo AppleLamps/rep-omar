@@ -1,10 +1,4 @@
-const financialData = [
-  { year: "2022", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "None", type: "Partnership", analysis: "Dormant / shell status", highlight: false },
-  { year: "2023", asset: "Rose Lake Capital", value: "$1 - $1,000", income: "$15k - $50k", type: "Partnership", analysis: "Modest consulting fees; no asset growth", highlight: false },
-  { year: "2024", asset: "Rose Lake Capital", value: "$5M - $25M", income: "None", type: "Partnership", analysis: "Large markup with no reported income (illiquid / unrealized)", highlight: true },
-  { year: "2023", asset: "eStCru LLC", value: "$15k - $50k", income: "$201 - $1,000", type: "Partnership", analysis: "Small disclosed business", highlight: false },
-  { year: "2024", asset: "eStCru LLC", value: "$1M - $5M", income: "None", type: "Partnership", analysis: "Large markup with no reported income", highlight: true },
-];
+import { financialData } from "@/lib/investigation";
 
 export default function FinancialTable() {
   return (

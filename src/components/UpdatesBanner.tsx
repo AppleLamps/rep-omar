@@ -31,11 +31,9 @@ export default function UpdatesBanner() {
 
                 {/* Copy */}
                 <p className="flex-1 text-sm text-amber-900 leading-snug">
-                    <span className="font-semibold">April 2026 Update —</span>{" "}
-                    Since this site was first published in December 2025, the U.S. House
-                    Committee on Oversight and Government Reform opened an inquiry into
-                    Rep. Omar&apos;s financial disclosures, and new sworn testimony from
-                    Rose Lake&apos;s named advisor has entered the public record.{" "}
+                    <span className="font-semibold">October 13, 2026 Update —</span>{" "}
+                    New disclosure filings, the Rose Lake transfer record, the OCC dismissal recommendation,
+                    and Pirro&apos;s newly announced federal investigation are now included.{" "}
                     <Link
                         href="/updates"
                         className="font-semibold underline underline-offset-2 hover:text-amber-700 transition-colors"
