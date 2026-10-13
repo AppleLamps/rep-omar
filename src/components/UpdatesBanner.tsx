@@ -47,7 +47,7 @@ export default function UpdatesBanner() {
                 {/* Dismiss */}
                 <button
                     onClick={() => setDismissed(true)}
-                    className="flex-shrink-0 ml-2 p-1 rounded hover:bg-amber-200 transition-colors"
+                    className="flex-shrink-0 ml-2 min-h-11 min-w-11 flex items-center justify-center p-2 rounded hover:bg-amber-200 transition-colors"
                     aria-label="Dismiss update notice"
                 >
                     <svg

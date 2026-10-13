@@ -37,8 +37,8 @@ export default function FinancialTable() {
       </div>
 
       {/* Desktop table view */}
-      <div className="hidden sm:block overflow-x-auto rounded-xl border border-slate-200">
-        <table className="w-full">
+      <div role="region" aria-label="Congressional financial disclosures; scroll horizontally for more columns" tabIndex={0} className="hidden sm:block overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full min-w-[800px]">
           <thead>
             <tr className="bg-slate-900 text-white">
               <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Year</th>

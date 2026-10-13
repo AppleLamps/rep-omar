@@ -35,7 +35,7 @@ export default function DisclaimerBanner() {
             </p>
 
             {isExpanded && (
-              <div className="mt-3 space-y-2 text-amber-700 text-sm border-t border-amber-200 pt-3">
+              <div id="full-disclaimer" className="mt-3 space-y-2 text-amber-700 text-sm border-t border-amber-200 pt-3">
                 <p>
                   <strong>Fair Comment Doctrine:</strong> The individuals discussed are public
                   figures whose publicly disclosed financial activities and official conduct are
@@ -58,8 +58,10 @@ export default function DisclaimerBanner() {
             )}
 
             <button
+              aria-expanded={isExpanded}
+              aria-controls="full-disclaimer"
               onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-2 text-amber-600 hover:text-amber-800 text-sm font-medium underline focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded"
+              className="mt-2 min-h-11 text-amber-800 hover:text-amber-800 text-sm font-medium underline focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded"
             >
               {isExpanded ? "Show less" : "Read full disclaimer"}
             </button>

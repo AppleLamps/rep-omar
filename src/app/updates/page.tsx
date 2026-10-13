@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function UpdatesPage() {
     return (
-        <div className="min-h-screen bg-white">
+        <main id="main-content" className="min-h-screen bg-white">
             {/* Page header */}
             <div className="bg-slate-900 px-4 py-10 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">
@@ -118,7 +118,7 @@ export default function UpdatesPage() {
                                         <p className="text-slate-700 text-sm font-medium">
                                             House Oversight Letter to Rep. Omar (Feb 5, 2026)
                                         </p>
-                                        <p className="text-slate-400 text-xs mt-1 italic">
+                                        <p className="text-slate-600 text-xs mt-1 italic">
                                             Exhibit pending upload — file will appear at{" "}
                                             <code className="text-slate-600">/exhibits/oversight-letter-2026-02-05.pdf</code>
                                         </p>
@@ -247,7 +247,7 @@ export default function UpdatesPage() {
                                         <p className="text-slate-700 text-sm font-medium">
                                             E.J. Hailer Section 341 Examination Transcript (Nov 21, 2024)
                                         </p>
-                                        <p className="text-slate-400 text-xs mt-1 italic">
+                                        <p className="text-slate-600 text-xs mt-1 italic">
                                             Exhibit pending upload — file will appear at{" "}
                                             <code className="text-slate-600">/exhibits/hailer-341-transcript-2024-11-21.pdf</code>
                                         </p>
@@ -288,14 +288,14 @@ export default function UpdatesPage() {
                                 three Rose Lake entities:
                             </p>
 
-                            <div className="overflow-x-auto rounded-xl border border-slate-200 mb-5">
-                                <table className="w-full text-sm">
+                            <div role="region" aria-label="Entity status table; scroll horizontally for more columns" tabIndex={0} className="overflow-x-auto rounded-xl border border-slate-200 mb-5">
+                                <table className="w-full min-w-[640px] text-sm">
                                     <thead>
                                         <tr className="bg-slate-900 text-white text-left">
-                                            <th className="px-4 py-3 font-semibold">Entity</th>
-                                            <th className="px-4 py-3 font-semibold">DE File #</th>
-                                            <th className="px-4 py-3 font-semibold">Formed</th>
-                                            <th className="px-4 py-3 font-semibold">Status</th>
+                                            <th scope="col" className="px-4 py-3 font-semibold">Entity</th>
+                                            <th scope="col" className="px-4 py-3 font-semibold">DE File #</th>
+                                            <th scope="col" className="px-4 py-3 font-semibold">Formed</th>
+                                            <th scope="col" className="px-4 py-3 font-semibold">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-200 bg-white">
@@ -370,6 +370,6 @@ export default function UpdatesPage() {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }

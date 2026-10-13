@@ -11,12 +11,12 @@ export default function Footer() {
             </div>
             <div>
               <span className="font-display font-bold text-lg text-white">Follow The Money</span>
-              <p className="text-slate-500 text-xs">by <a href="https://x.com/lamps_apple" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 hover:underline">Apple Lamps</a></p>
+              <p className="text-slate-400 text-xs">by <a href="https://x.com/lamps_apple" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 hover:underline">Apple Lamps</a></p>
             </div>
           </div>
           <div className="text-center md:text-right">
-            <p className="text-slate-500 text-sm">Based on public records and congressional disclosures</p>
-            <p className="text-slate-600 text-xs mt-1">Sources: House.gov, Court Records, SEC Filings</p>
+            <p className="text-slate-400 text-sm">Based on public records and congressional disclosures</p>
+            <p className="text-slate-400 text-xs mt-1">Sources: House.gov, Court Records, SEC Filings</p>
           </div>
         </div>
 
@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-slate-800">
           <h3 className="text-slate-400 text-sm font-semibold mb-4 text-center">Legal Disclaimers</h3>
 
-          <div className="space-y-4 text-slate-500 text-xs leading-relaxed">
+          <div className="space-y-4 text-slate-400 text-xs leading-relaxed">
             {/* Opinion & Commentary Disclaimer */}
             <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-800">
               <p className="font-medium text-slate-400 mb-2">Opinion & Commentary</p>
@@ -96,11 +96,11 @@ export default function Footer() {
 
           {/* Copyright & Final Notice */}
           <div className="mt-6 pt-6 border-t border-slate-800 text-center">
-            <p className="text-slate-600 text-xs">
+            <p className="text-slate-400 text-xs">
               &copy; {new Date().getFullYear()} Apple Lamps. All rights reserved.
               This work is protected by copyright and may not be reproduced without permission.
             </p>
-            <p className="text-slate-600 text-xs mt-2">
+            <p className="text-slate-400 text-xs mt-2">
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </p>
           </div>
