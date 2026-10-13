@@ -2,68 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import NoticeCard from "./NoticeCard";
 
 export default function UpdatesBanner() {
-    const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  if (dismissed) return null;
 
-    if (dismissed) return null;
-
-    return (
-        <div className="relative bg-amber-50 border-b-2 border-amber-400 px-4 py-3 sm:px-6">
-            <div className="max-w-5xl mx-auto flex items-start gap-3 sm:items-center">
-                {/* Icon */}
-                <div className="flex-shrink-0 mt-0.5 sm:mt-0">
-                    <svg
-                        className="w-5 h-5 text-amber-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
-                </div>
-
-                {/* Copy */}
-                <p className="flex-1 text-sm text-amber-900 leading-snug">
-                    <span className="font-semibold">October 13, 2026 Update —</span>{" "}
-                    New disclosure filings, the Rose Lake transfer record, the OCC dismissal recommendation,
-                    and Pirro&apos;s newly announced federal investigation are now included.{" "}
-                    <Link
-                        href="/updates"
-                        className="font-semibold underline underline-offset-2 hover:text-amber-700 transition-colors"
-                    >
-                        Read the update &rarr;
-                    </Link>
-                </p>
-
-                {/* Dismiss */}
-                <button
-                    onClick={() => setDismissed(true)}
-                    className="flex-shrink-0 ml-2 min-h-11 min-w-11 flex items-center justify-center p-2 rounded hover:bg-amber-200 transition-colors"
-                    aria-label="Dismiss update notice"
-                >
-                    <svg
-                        className="w-4 h-4 text-amber-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    );
+  return (
+    <NoticeCard
+      id="update-notice"
+      title="October 13, 2026 Update"
+      variant="update"
+      footer={<Link href="/updates" className="inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-semibold text-red-700 hover:text-red-800 underline underline-offset-4">Read the update <span aria-hidden="true">→</span></Link>}
+      action={
+        <button type="button" onClick={() => setDismissed(true)} className="flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors" aria-label="Dismiss update notice">
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      }
+    >
+      <p>New disclosure filings, the Rose Lake transfer record, the OCC dismissal recommendation, and Pirro&apos;s newly announced federal investigation are now included.</p>
+    </NoticeCard>
+  );
 }
