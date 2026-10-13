@@ -11,32 +11,32 @@ export default function Hero() {
           Rep. Ilhan Omar &amp; Tim Mynett
         </h1>
         <p className="text-lg sm:text-2xl text-slate-300 mb-8 animate-fade-in-delay-2 max-w-3xl mx-auto">
-          How a congresswoman&apos;s Foreign Affairs Committee seat became a pipeline to millions for her husband&apos;s investment firm
+          Following campaign payments, amended financial disclosures, and international transfers involving her husband&apos;s business network
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-300 animate-fade-in-delay-3">
           <span className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            $30M+ Net Worth Surge
+            Amended Financial Disclosures
           </span>
           <span className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Foreign Affairs Committee
+            Federal & Congressional Scrutiny
           </span>
           <span className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
             </svg>
-            African Mining Investments
+            International Money Trail
           </span>
           <span className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
-            Paper gains, illiquid stakes & IPO timing
+            Updated October 13, 2026
           </span>
         </div>
       </div>
