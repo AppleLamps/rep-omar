@@ -13,8 +13,9 @@ const navLinks = [
   { href: "#players", label: "Players" },
   { href: "#connection", label: "The Links" },
   { href: "#money", label: "Money Trail" },
-  { href: "#papertiger", label: "Paper Tiger" },
-  { href: "#conflict", label: "Conflicts" },
+  { href: "#transfers", label: "$11.25M Wires" },
+  { href: "#papertiger", label: "Disclosures" },
+  { href: "#conflict", label: "Open Questions" },
   { href: "#china", label: "China Ties" },
   { href: "#redflags", label: "Red Flags" },
   { href: "#sources", label: "Sources" },
@@ -117,7 +118,7 @@ export default function Navigation({ activeSection, scrollProgress }: Navigation
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}
                 aria-current={activeSection === link.href.slice(1) ? "location" : undefined}
-                className={`whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors ${activeSection === link.href.slice(1) ? "bg-red-50 text-red-700" : "text-slate-600 hover:bg-slate-50 hover:text-red-700"}`}>
+                className={`whitespace-nowrap rounded-lg px-2 py-2 text-sm font-medium transition-colors ${activeSection === link.href.slice(1) ? "bg-red-50 text-red-700" : "text-slate-600 hover:bg-slate-50 hover:text-red-700"}`}>
                 {link.label}
               </Link>
             ))}
