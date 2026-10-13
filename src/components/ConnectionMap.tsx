@@ -10,18 +10,6 @@ export default function ConnectionMap() {
         </p>
 
         <div className="relative">
-          {/* Connection Lines - Hidden on mobile, shown on larger screens */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M400 80 L400 140" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M400 200 L400 260" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M400 320 L250 380" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M400 320 L550 380" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M250 440 L250 480" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M550 440 L550 480" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 4" />
-            </svg>
-          </div>
-
           {/* The Players */}
           <div className="grid gap-6 relative z-10">
             {/* Top: Rep. Omar */}
@@ -41,8 +29,8 @@ export default function ConnectionMap() {
               </div>
             </div>
 
-            {/* Arrow indicator for mobile */}
-            <div className="flex justify-center lg:hidden">
+            {/* Relationship indicator */}
+            <div className="flex justify-center">
               <div className="flex flex-col items-center text-red-400">
                 <span className="text-xs mb-1">Married to</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,8 +55,8 @@ export default function ConnectionMap() {
               </div>
             </div>
 
-            {/* Arrow indicator for mobile */}
-            <div className="flex justify-center lg:hidden">
+            {/* Relationship indicator */}
+            <div className="flex justify-center">
               <div className="flex flex-col items-center text-red-400">
                 <span className="text-xs mb-1">Partner at</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,8 +82,8 @@ export default function ConnectionMap() {
               </div>
             </div>
 
-            {/* Arrow indicator for mobile */}
-            <div className="flex justify-center lg:hidden">
+            {/* Relationship indicator */}
+            <div className="flex justify-center">
               <div className="flex flex-col items-center text-red-400">
                 <span className="text-xs mb-1">Invested in</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +103,7 @@ export default function ConnectionMap() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Ivanhoe Atlantic</h4>
-                    <p className="text-slate-500 text-xs">African Mining Company</p>
+                    <p className="text-slate-400 text-xs">African Mining Company</p>
                   </div>
                 </div>
                 <p className="text-slate-400 text-sm">Kon Kweni iron ore project (formerly Nimba) in <span className="text-green-400">Guinea/Liberia</span> - countries under Rep. Omar&apos;s Africa Subcommittee jurisdiction</p>
@@ -130,7 +118,7 @@ export default function ConnectionMap() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">U.S. Foreign Policy</h4>
-                    <p className="text-slate-500 text-xs">Diplomatic Support</p>
+                    <p className="text-slate-400 text-xs">Diplomatic Support</p>
                   </div>
                 </div>
                 <p className="text-slate-400 text-sm">Mining project value depends on <span className="text-purple-400">U.S. diplomatic relations</span> with Guinea and Liberia</p>
