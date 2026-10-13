@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Apple Lamps Research | Rose Lake Capital Investigation",
-  description: "A comprehensive forensic due diligence investigation into Rose Lake Capital LLC, examining valuation anomalies, political connections, and corporate governance concerns.",
+  description: "Follow campaign payments, amended financial disclosures, Rose Lake transfers, and federal and congressional scrutiny. Updated October 13, 2026.",
   keywords: ["Rose Lake Capital", "investigative journalism", "due diligence", "forensic analysis", "political finance"],
   authors: [{ name: "Apple Lamps Research Unit" }],
   openGraph: {
