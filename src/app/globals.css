@@ -11,6 +11,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Leave fixed navigation and breathing room above hash targets. */
+[id] { scroll-margin-top: 5.25rem; }
+@media (min-width: 1280px) {
+  [id] { scroll-margin-top: 8.25rem; }
+}
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
+p, li, td, th, code { overflow-wrap: anywhere; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  [class*="animate-fade-in"] { opacity: 1 !important; transform: none !important; }
+}
+
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -74,7 +97,6 @@ body {
 /* Fade in animation */
 @keyframes fadeIn {
   from {
-    opacity: 0;
     transform: translateY(20px);
   }
   to {
@@ -89,17 +111,14 @@ body {
 
 .animate-fade-in-delay-1 {
   animation: fadeIn 0.6s ease-out 0.1s forwards;
-  opacity: 0;
 }
 
 .animate-fade-in-delay-2 {
   animation: fadeIn 0.6s ease-out 0.2s forwards;
-  opacity: 0;
 }
 
 .animate-fade-in-delay-3 {
   animation: fadeIn 0.6s ease-out 0.3s forwards;
-  opacity: 0;
 }
 
 /* Print styles */
