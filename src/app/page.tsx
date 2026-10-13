@@ -11,10 +11,11 @@ export default function Home() {
   // Track scroll progress and active section
   useEffect(() => {
     let ticking = false;
+    let frameId = 0;
 
     const handleScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
+        frameId = window.requestAnimationFrame(() => {
           const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
           const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
           setScrollProgress(progress);
@@ -48,14 +49,21 @@ export default function Home() {
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
       <Navigation activeSection={activeSection} scrollProgress={scrollProgress} />
       <BackToTop show={showBackToTop} />
+      <main id="main-content" tabIndex={-1}>
       <Hero />
       <UpdatesBanner />
       <DisclaimerBanner />
@@ -71,10 +79,10 @@ export default function Home() {
             Understanding the key figures and their roles in this financial arrangement
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl border-2 border-red-200 p-6 sm:p-8">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                   IO
                 </div>
                 <div>
@@ -112,7 +120,7 @@ export default function Home() {
 
             <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 sm:p-8">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                   TM
                 </div>
                 <div>
@@ -150,7 +158,7 @@ export default function Home() {
 
             <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 sm:p-8">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                   WH
                 </div>
                 <div>
@@ -342,13 +350,13 @@ export default function Home() {
             <p className="text-slate-600 text-center mb-8 max-w-2xl mx-auto text-sm">
               Rose Lake sits at the center of a cluster of LLCs and funds named in civil cases and press coverage... not a single ticker, but a web of vehicles.
             </p>
-            <div className="overflow-x-auto rounded-xl border border-slate-200">
-              <table className="w-full text-sm">
+            <div role="region" aria-label="Related entities table; scroll horizontally for more columns" tabIndex={0} className="overflow-x-auto rounded-xl border border-slate-200">
+              <table className="w-full min-w-[640px] text-sm">
                 <thead>
                   <tr className="bg-slate-900 text-white text-left">
-                    <th className="px-4 py-3 font-semibold">Entity</th>
-                    <th className="px-4 py-3 font-semibold">Jurisdiction / focus</th>
-                    <th className="px-4 py-3 font-semibold">Notes</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Entity</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Jurisdiction / focus</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Notes</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200 bg-white">
@@ -1067,6 +1075,7 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );
