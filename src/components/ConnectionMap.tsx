@@ -1,24 +1,17 @@
-import { sources } from "@/lib/investigation";
+import Link from "next/link";
+import { Citations } from "./SourceLink";
 
 export default function ConnectionMap() {
-  return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white" id="connection">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4 text-center">The Connection Map</h2>
-        <p className="text-slate-300 text-center mb-10">Documented family and business relationships, with the two Rose Lake entities distinguished.</p>
-        <div className="max-w-lg mx-auto space-y-4 text-center">
-          <div className="bg-red-700 rounded-2xl p-6"><h3 className="text-xl font-bold mb-2">Rep. Ilhan Omar</h3><p className="text-red-100 text-sm">Current committees: Education and the Workforce; Budget</p></div>
-          <p className="text-red-300 text-sm">Married to ↓</p>
-          <div className="bg-slate-800 border border-red-400 rounded-2xl p-6"><h3 className="text-xl font-bold mb-2">Tim Mynett</h3><p className="text-slate-300 text-sm">E Street Group co-founder and Rose Lake Capital co-founder</p></div>
-          <p className="text-red-300 text-sm">Business partnership with ↓</p>
-          <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6"><h3 className="text-xl font-bold mb-2">William R. Hailer</h3><p className="text-slate-300 text-sm">Rose Lake co-founder; identifies himself as Rose Lake Inc. CEO in docket 314</p></div>
-        </div>
-        <div className="grid md:grid-cols-2 gap-5 mt-8">
-          <div className="rounded-xl border border-slate-700 bg-slate-800 p-6"><h3 className="text-xl font-semibold mb-3">Rose Lake Capital LLC</h3><p className="text-slate-300 text-sm">Named in Omar&apos;s financial disclosure. Amended 2024 asset value: None. Spouse partnership income: $100,001–$1,000,000.</p><a href={sources.amendment.href} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-red-300 underline text-sm">Disclosure record</a></div>
-          <div className="rounded-xl border border-slate-700 bg-slate-800 p-6"><h3 className="text-xl font-semibold mb-3">Rose Lake Inc.</h3><p className="text-slate-300 text-sm">Named in Hailer&apos;s declaration as the recipient of $11.25 million in wires from OCI Limited through Barclays. Intercompany movements have not been established.</p><a href={sources.declaration.href} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-red-300 underline text-sm">Sworn declaration</a></div>
-        </div>
-        <p className="mt-6 text-slate-300 text-sm text-center">Ivanhoe Atlantic remains an unverified ownership lead. Shared advisors do not establish a Rose Lake shareholding.</p>
-      </div>
-    </section>
-  );
+  return <div id="connection" className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-7">
+    <h3 className="text-xl font-bold">The entities behind the names</h3>
+    <p className="mt-3 text-sm leading-6 text-slate-600">Omar is married to Mynett. Mynett and Hailer are business partners. The entities named in the wire account and the disclosure are different.</p>
+    <div className="mt-5 grid gap-4 md:grid-cols-2">
+      <article className="rounded-xl border border-slate-200 bg-white p-5"><p className="eyebrow text-red-800">Named wire recipient</p><h4 className="mt-2 font-bold">Rose Lake Inc.</h4><p className="mt-3 text-sm leading-6 text-slate-700">Hailer identifies himself as CEO of this Delaware public benefit corporation. His declaration describes the $11.25 million incoming wires.</p><Citations ids={["declaration"]} /></article>
+      <article className="rounded-xl border border-slate-200 bg-white p-5"><p className="eyebrow text-red-800">Disclosed spouse asset</p><h4 className="mt-2 font-bold">Rose Lake Capital LLC</h4><p className="mt-3 text-sm leading-6 text-slate-700">House forms describe venture capital management in Washington, DC. The amended 2024 entry lists value None and partnership income of $100,001–$1,000,000.</p><Citations ids={["amendment"]} /></article>
+      <article className="rounded-xl border border-slate-200 bg-white p-5"><p className="eyebrow text-red-800">Wine venture</p><h4 className="mt-2 font-bold">eStCru LLC</h4><p className="mt-3 text-sm leading-6 text-slate-700">California winery named in Omar’s disclosures and the Mohd dispute. Its April 4, 2026 cancellation was signed by Hailer.</p><Citations ids={["annual", "winery"]} /></article>
+      <article className="rounded-xl border border-slate-200 bg-white p-5"><p className="eyebrow text-red-800">Cannabis litigation</p><h4 className="mt-2 font-bold">eST Ventures &amp; Badlands entities</h4><p className="mt-3 text-sm leading-6 text-slate-700">The Minnesota complaint names Hailer, eST Ventures LLC, Badlands Fund GP LLC and Badlands Ventures LLC as defendants. Mynett is mentioned, not named as a defendant in that complaint.</p><Citations ids={["cannabis"]} /></article>
+    </div>
+    <p className="mt-5 text-sm leading-6 text-slate-600">A business relationship does not trace a cash transfer. Bank records must establish movements between the two Rose Lake entities or payments to Mynett.</p>
+    <p id="china" className="mt-4 text-sm"><Link href="/research/ivanhoe" className="source-link text-red-800">Explore the separate Ivanhoe and China-policy appendix →</Link></p>
+  </div>;
 }

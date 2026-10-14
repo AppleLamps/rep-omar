@@ -1,3 +1,5 @@
+> Historical research note. Use [the verified website repair plan](docs/Website_Fix_Plan.md) and current source records before adding claims to the live site.
+
 # CONFIDENTIAL INVESTIGATIVE REPORT:
 
 # ROSE LAKE CAPITAL LLC

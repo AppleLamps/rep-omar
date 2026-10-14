@@ -1,71 +1,27 @@
 # Follow The Money
 
-A public accountability website documenting potential conflicts of interest between Rep. Ilhan Omar's congressional committee positions and her husband Tim Mynett's investment firm, Rose Lake Capital LLC.
+A conservative, partisan investigation by Apple Lamps into Ilhan Omar, Tim Mynett and the Rose Lake business network. The site follows campaign payments, revised financial disclosures, Hailer’s sworn transfer account and the lenders’ court activity.
 
-## Overview
+## Content
 
-This website presents publicly available information regarding:
+The homepage leads with the current procedural status, $11.25 million transfer account and twelve-row business-disclosure comparison. `/updates` records developments and corrections. `/research/ivanhoe` contains the separate, dated mining-policy appendix.
 
-- **The Committee-Investment Connection**: Rep. Omar's position on the House Foreign Affairs Committee's Subcommittee on Africa and her husband's investments in African mining projects
-- **The Money Trail**: Campaign fund disbursements to E Street Group, Rose Lake Capital's formation, and investments in Ivanhoe Atlantic
-- **The China Connection**: Congressional investigation into Ivanhoe Atlantic's ties to Chinese state-linked entities (CITIC Group, Zijin Mining)
-- **Financial Disclosures**: Analysis of congressional financial disclosure filings showing dramatic wealth increases
+Facts, sworn statements, allegations, reporting and the author’s analysis are identified and cited. Do not infer a money flow from a shared advisor or treat an original disclosure as current after an amendment.
 
-## Tech Stack
+## Development
 
-- **Framework**: Next.js 16
-- **Styling**: Tailwind CSS
-- **Language**: TypeScript
-- **Deployment**: Vercel
+Next.js 16, React 19, TypeScript and Tailwind CSS 3. Install the locked dependencies with `npm ci`; run `npm run dev` for development.
 
-## Getting Started
+Before release, run `npm run lint`, `npm run typecheck`, `npm run build` and `npm audit --omit=dev`.
 
-```bash
-# Install dependencies
-npm install
+## Source of truth
 
-# Run development server
-npm run dev
+`src/lib/investigation.ts` holds sources, disclosure versions, rosters and timeline data. Static report sections render on the server; `SiteFrame` handles navigation, scrolling and print disclosure expansion. Source links must remain beside the associated claim.
 
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── layout.tsx      # Root layout with fonts
-│   └── page.tsx        # Main page with all sections
-└── components/
-    ├── BackToTop.tsx   # Scroll-to-top button
-    ├── ConnectionMap.tsx # Visual influence/money flow diagram
-    ├── FinancialTable.tsx # Congressional disclosure data table
-    ├── Footer.tsx      # Site footer
-    ├── Hero.tsx        # Hero section
-    ├── Navigation.tsx  # Fixed navigation with scroll progress
-    ├── StatCards.tsx   # Key statistics cards
-    └── index.ts        # Component exports
-```
-
-## Sources
-
-All information is sourced from:
-- Congressional financial disclosures (House.gov)
-- FEC campaign finance records
-- Court filings and litigation records
-- News reports from multiple outlets
-- House Select Committee on China communications
-- Corporate filings and SEC records
+See [the repair and verification plan](docs/Website_Fix_Plan.md) for the checked figures, unresolved records and acceptance criteria. Earlier research notes are historical and may contain superseded assumptions.
 
 ## Deployment
 
-The site is configured for Vercel deployment. Set the **Root Directory** to the project root in Vercel settings.
+Vercel’s existing Git integration publishes `main` to https://rep-omar.vercel.app/ and creates previews for feature branches. Preview deployments are marked noindex. Canonical metadata and the sitemap use the production URL.
 
-## Disclaimer
-
-This website is provided for informational purposes only and does not constitute legal or financial advice. All information is based on publicly available records and reports.
+The editorial review date is explicit. Change it when the records are reviewed, not automatically whenever code is deployed.

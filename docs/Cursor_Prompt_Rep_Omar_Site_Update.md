@@ -1,3 +1,5 @@
+> Historical research note. Some claims and implementation instructions are superseded. Use [Website_Fix_Plan.md](Website_Fix_Plan.md) and the cited source records before incorporating material into the live site.
+
 # Cursor Prompt: Rep Omar Site — April 2026 Update
 
 Copy the block below into Cursor (Composer or chat) with the repo open. It's written to be self-sufficient: Cursor should be able to find the right files, add the content, and wire up any new routes without back-and-forth.

@@ -1,30 +1,672 @@
 export const reviewedDate = "October 13, 2026";
+export const reviewedISODate = "2026-10-13";
+export const siteURL = "https://rep-omar.vercel.app";
+export const socialImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "Follow The Money: a conservative investigation by Apple Lamps" };
 
+export type SourceGroup = "Disclosures" | "Court and campaign records" | "Archived team" | "Reporting and responses" | "Mining appendix";
+export interface Source { label: string; href: string; kind: string; group: SourceGroup; date?: string }
 export const sources = {
-  original: { label: "House Clerk: original 2024 disclosure, filed May 14, 2025 (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10068415.pdf" },
-  amendment: { label: "House Clerk: 2024 amendment, filed March 26, 2026 (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10073338.pdf" },
-  annual: { label: "House Clerk: 2025 annual disclosure, filed May 13, 2026 (PDF)", href: "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2025/10077400.pdf" },
-  declaration: { label: "William R. Hailer declaration: Epic! Creations, case 24-11161-BLS, docket 314, November 20, 2024 (PDF; hosted by Washington Free Beacon)", href: "https://freebeacon.com/wp-content/uploads/2026/05/Declaration-of-Will-Hailer.pdf" },
-  oversight: { label: "House Oversight: letter to Timothy Mynett, February 5, 2026 (PDF)", href: "https://oversight.house.gov/wp-content/uploads/2026/02/Letter-to-Timothy-Mynett-.pdf" },
-  committees: { label: "Rep. Omar: current committees and caucuses", href: "https://omar.house.gov/about/committees-and-caucuses" },
-  watchdog: { label: "Wall Street Journal: OCC recommendation, September 9, 2026", href: "https://www.wsj.com/politics/ilhan-omar-cleared-of-wrongdoing-after-overstating-assets-by-millions-963eb6cf" },
-  watchdogVote: { label: "Star Tribune: OCC board voted 5–1 to recommend dismissal, September 9, 2026", href: "https://www.startribune.com/report-congressional-watchdog-clears-ilhan-omar-over-financial-disclosure-errors/601887629" },
-  federal: { label: "Axios: Pirro announces financial-disclosure investigation, October 13, 2026", href: "https://www.axios.com/2026/10/13/ilhan-omar-investigation-finances-pirro" },
-  winery: { label: "Washington Free Beacon: eStCru termination filing, April 22, 2026", href: "https://freebeacon.com/democrats/fall-from-grapes-winery-owned-by-ilhan-omars-husband-folds-one-year-after-omar-said-it-was-worth-up-to-5-million/" },
-  settlements: { label: "Minnesota Reformer: $1.2 million cannabis settlement, August 1, 2024", href: "https://minnesotareformer.com/2024/08/01/former-democratic-operative-settles-1-2-million-debt-with-south-dakota-cannabis-growers/" },
-  followup: { label: "Washington Free Beacon: Rose Lake transfers and litigation follow-up, May 29, 2026", href: "https://freebeacon.com/democrats/us-anti-terror-agency-froze-funds-of-ilhan-omars-husband-during-biden-administration-partner-says-biden-doj-would-later-probe-omars-foreign-ties/" },
-  oci: { label: "OCI: company statement on settlement and release, February 15, 2026", href: "https://oci-group.co.uk/legal" },
-  ipo: { label: "MINING.COM: Ivanhoe Atlantic considers U.S. IPO, January 23, 2026", href: "https://www.mining.com/ivanhoe-atlantic-pivots-to-us-ipo-after-rail-deal-win/" },
-};
-
-export const financialData = [
-  { year: "2022", asset: "Rose Lake Capital", value: "$1–$1,000", income: "None", type: "Partnership", analysis: "Historical annual disclosure", highlight: false },
-  { year: "2023", asset: "Rose Lake Capital", value: "$1–$1,000", income: "$15,001–$50,000", type: "Partnership", analysis: "Historical annual disclosure", highlight: false },
-  { year: "2024 · original", asset: "Rose Lake Capital", value: "$5,000,001–$25,000,000", income: "None", type: "Partnership", analysis: "Filed May 14, 2025; superseded by March 2026 amendment", highlight: true },
-  { year: "2024 · amended", asset: "Rose Lake Capital", value: "None", income: "$100,001–$1,000,000", type: "Partnership", analysis: "Filed March 26, 2026; asset value reduced and income added", highlight: true },
-  { year: "2025", asset: "Rose Lake Capital", value: "None", income: "None", type: "Partnership", analysis: "Filed May 13, 2026; latest annual disclosure reviewed", highlight: false },
-  { year: "2023", asset: "eStCru LLC", value: "$15,001–$50,000", income: "$201–$1,000", type: "Partnership", analysis: "Historical annual disclosure", highlight: false },
-  { year: "2024 · original", asset: "eStCru LLC", value: "$1,000,001–$5,000,000", income: "$5,001–$15,000", type: "Partnership", analysis: "Filed May 14, 2025; superseded by March 2026 amendment", highlight: true },
-  { year: "2024 · amended", asset: "eStCru LLC", value: "None", income: "$2,501–$5,000", type: "Partnership", analysis: "Filed March 26, 2026", highlight: true },
-  { year: "2025", asset: "eStCru LLC", value: "None", income: "$201–$1,000", type: "Partnership", analysis: "Filed May 13, 2026; termination filed April 4, 2026, per reporting", highlight: false },
+  "annual2022": {
+    "label": "2022 annual disclosure · 10053193",
+    "href": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2022/10053193.pdf",
+    "kind": "House disclosure",
+    "group": "Disclosures",
+    "date": "May 15, 2023"
+  },
+  "annual2023": {
+    "label": "2023 original disclosure · 10060937",
+    "href": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2023/10060937.pdf",
+    "kind": "House disclosure",
+    "group": "Disclosures",
+    "date": "May 14, 2024"
+  },
+  "amendment2023": {
+    "label": "2023 amended disclosure · 10074577",
+    "href": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2023/10074577.pdf",
+    "kind": "House disclosure",
+    "group": "Disclosures",
+    "date": "March 26, 2026"
+  },
+  "original": {
+    "label": "2024 original disclosure · 10068415",
+    "href": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10068415.pdf",
+    "kind": "House disclosure",
+    "group": "Disclosures",
+    "date": "May 14, 2025"
+  },
+  "amendment": {
+    "label": "2024 amended disclosure · 10073338",
+    "href": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10073338.pdf",
+    "kind": "House disclosure",
+    "group": "Disclosures",
+    "date": "March 26, 2026"
+  },
+  "annual": {
+    "label": "2025 annual disclosure · 10077400",
+    "href": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2025/10077400.pdf",
+    "kind": "House disclosure",
+    "group": "Disclosures",
+    "date": "May 13, 2026"
+  },
+  "declaration": {
+    "label": "Hailer declaration · Epic! docket 314",
+    "href": "https://freebeacon.com/wp-content/uploads/2026/05/Declaration-of-Will-Hailer.pdf",
+    "kind": "Sworn statement",
+    "group": "Court and campaign records",
+    "date": "November 20, 2024"
+  },
+  "subpoenas": {
+    "label": "Twelve-bank subpoenas · docket 413-3",
+    "href": "https://storage.courtlistener.com/recap/gov.uscourts.deb.192047/gov.uscourts.deb.192047.413.3.pdf",
+    "kind": "Court filing",
+    "group": "Court and campaign records",
+    "date": "Notice: March 21, 2025; filed April 23"
+  },
+  "ociComplaint": {
+    "label": "OCI complaint · paragraphs 105–107",
+    "href": "https://storage.courtlistener.com/recap/gov.uscourts.deb.200811/gov.uscourts.deb.200811.8.3.pdf",
+    "kind": "Court allegations",
+    "group": "Court and campaign records",
+    "date": "May 5, 2025; reproduced April 28, 2026"
+  },
+  "plan": {
+    "label": "Confirmed Byju’s Alpha plan · definition 58",
+    "href": "https://storage.courtlistener.com/recap/gov.uscourts.deb.192034/gov.uscourts.deb.192034.517.1.pdf",
+    "kind": "Confirmed plan",
+    "group": "Court and campaign records",
+    "date": "October 29, 2025"
+  },
+  "chapman": {
+    "label": "OCI settlement motion and Chapman declaration",
+    "href": "https://storage.courtlistener.com/recap/gov.uscourts.deb.200811/gov.uscourts.deb.200811.1.3.pdf",
+    "kind": "Motion and sworn statement",
+    "group": "Court and campaign records",
+    "date": "November 15, 2025; reproduced March 13, 2026"
+  },
+  "cannabis": {
+    "label": "Dakota Natural Growers complaint · 27-CV-22-18279",
+    "href": "https://freebeacon.com/wp-content/uploads/2025/08/Badlands-Cannabis-Lawsuit.pdf",
+    "kind": "Court allegations",
+    "group": "Court and campaign records",
+    "date": "December 12, 2022"
+  },
+  "fec": {
+    "label": "FEC MUR 7639 · final certification",
+    "href": "https://www.fec.gov/files/legal/murs/7639/7639_18.pdf",
+    "kind": "FEC disposition",
+    "group": "Court and campaign records",
+    "date": "Decision: December 2, 2021"
+  },
+  "winery": {
+    "label": "eStCru cancellation · BA20260753835",
+    "href": "https://freebeacon.com/wp-content/uploads/2026/04/B4563-5607.pdf",
+    "kind": "California filing",
+    "group": "Court and campaign records",
+    "date": "April 4, 2026"
+  },
+  "oversight": {
+    "label": "Comer’s letter to Timothy Mynett",
+    "href": "https://oversight.house.gov/wp-content/uploads/2026/02/Letter-to-Timothy-Mynett-.pdf",
+    "kind": "Congressional letter",
+    "group": "Court and campaign records",
+    "date": "February 5, 2026"
+  },
+  "team": {
+    "label": "Rose Lake team page · archived October 29, 2024",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/team",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "hailerBio": {
+    "label": "Will Hailer · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/willhailer",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "hoffman": {
+    "label": "Alex Hoffman · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/hoffman",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "pratt": {
+    "label": "Justin Pratt · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/pratt",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "healy": {
+    "label": "Sheila Healy · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/healy",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "legislation": {
+    "label": "Rose Lake’s advertised expertise · May 6, 2024 archive",
+    "href": "https://web.archive.org/web/20240506011810/https://www.roselakecap.com/",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "derrough": {
+    "label": "Jefferies announces Bill Derrough’s return",
+    "href": "https://www.linkedin.com/posts/jefferies_welcometojef-activity-7432061746640695296-4_oT",
+    "kind": "Employer statement",
+    "group": "Reporting and responses",
+    "date": "February 24, 2026"
+  },
+  "campaign": {
+    "label": "E Street Group political payments · Fox News",
+    "href": "https://www.foxnews.com/politics/consulting-firm-ilhan-omar-husband-payments-campaign",
+    "kind": "Reporting",
+    "group": "Reporting and responses",
+    "date": "February 6, 2021"
+  },
+  "watchdog": {
+    "label": "OCC recommendation · Wall Street Journal",
+    "href": "https://www.wsj.com/politics/policy/ilhan-omar-cleared-of-wrongdoing-after-overstating-assets-by-millions-963eb6cf",
+    "kind": "Reporting on confidential findings",
+    "group": "Reporting and responses",
+    "date": "September 9, 2026"
+  },
+  "watchdogVote": {
+    "label": "OCC’s 5–1 vote · Minnesota Star Tribune",
+    "href": "https://www.startribune.com/report-congressional-watchdog-clears-ilhan-omar-over-financial-disclosure-errors/601887629",
+    "kind": "Reporting",
+    "group": "Reporting and responses",
+    "date": "September 9, 2026"
+  },
+  "federal": {
+    "label": "Pirro’s disclosure investigation · Axios",
+    "href": "https://www.axios.com/2026/10/13/ilhan-omar-investigation-finances-pirro",
+    "kind": "Reporting",
+    "group": "Reporting and responses",
+    "date": "October 13, 2026"
+  },
+  "pirro": {
+    "label": "Pirro’s public interview · America Reports",
+    "href": "https://www.foxnews.com/video/6406773980112",
+    "kind": "Interview",
+    "group": "Reporting and responses",
+    "date": "October 13, 2026"
+  },
+  "reformer": {
+    "label": "Wine and cannabis disputes · Minnesota Reformer",
+    "href": "https://minnesotareformer.com/2024/06/05/rep-ilhan-omars-husband-accused-of-swindling-investor-in-their-california-winery/",
+    "kind": "Reporting",
+    "group": "Reporting and responses",
+    "date": "June 5, 2024"
+  },
+  "settlements": {
+    "label": "Cannabis payoff · Minnesota Reformer",
+    "href": "https://minnesotareformer.com/2024/08/01/former-democratic-operative-settles-1-2-million-debt-with-south-dakota-cannabis-growers/",
+    "kind": "Reporting",
+    "group": "Reporting and responses",
+    "date": "August 1, 2024"
+  },
+  "followup": {
+    "label": "Transfers, settlements and adviser responses · Free Beacon",
+    "href": "https://freebeacon.com/democrats/us-anti-terror-agency-froze-funds-of-ilhan-omars-husband-during-biden-administration-partner-says-biden-doj-would-later-probe-omars-foreign-ties/",
+    "kind": "Reporting",
+    "group": "Reporting and responses",
+    "date": "May 29, 2026"
+  },
+  "historicalTeam": {
+    "label": "Peterson and Knuth’s historical listings · American Experiment",
+    "href": "https://www.americanexperiment.org/ilhan-omars-current-husband-linked-to-south-dakota-weed-lawsuit/",
+    "kind": "Historical reporting",
+    "group": "Reporting and responses",
+    "date": "February 24, 2023"
+  },
+  "oci": {
+    "label": "OCI’s settlement and release statement",
+    "href": "https://oci-group.co.uk/legal",
+    "kind": "Company response",
+    "group": "Reporting and responses",
+    "date": "February 15, 2026"
+  },
+  "ivanhoe": {
+    "label": "Ivanhoe Atlantic · shareholder and board overview",
+    "href": "https://ivanhoeatlantic.com/about-us/",
+    "kind": "Company statement",
+    "group": "Mining appendix"
+  },
+  "proxy": {
+    "label": "Ivanhoe Mines · 2024 management proxy",
+    "href": "https://www.ivanhoemines.com/wp-content/uploads/2024_mngt_proxy_circular.pdf",
+    "kind": "Company filing",
+    "group": "Mining appendix",
+    "date": "April 29, 2024"
+  },
+  "moolenaar": {
+    "label": "Moolenaar’s letter to Secretary Rubio",
+    "href": "https://chinaselectcommittee.house.gov/sites/evo-subsites/selectcommitteeontheccp.house.gov/files/evo-media-document/scc-letter-to-secretary-rubio-on-ivanhoe_120925.pdf",
+    "kind": "Congressional letter",
+    "group": "Mining appendix",
+    "date": "December 9, 2025"
+  },
+  "fcc": {
+    "label": "FCC · Covered List",
+    "href": "https://www.fcc.gov/supplychain/coveredlist",
+    "kind": "Agency record",
+    "group": "Mining appendix"
+  },
+  "uflpa": {
+    "label": "Zijin addition · Federal Register",
+    "href": "https://www.govinfo.gov/content/pkg/FR-2025-01-15/html/2025-00901.htm",
+    "kind": "Agency notice",
+    "group": "Mining appendix",
+    "date": "January 15, 2025"
+  },
+  "dhs": {
+    "label": "DHS · current UFLPA Entity List",
+    "href": "https://www.dhs.gov/uflpa-entity-list",
+    "kind": "Agency record",
+    "group": "Mining appendix"
+  },
+  "mynettBio": {
+    "label": "Tim Mynett · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/mynett",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "mestrich": {
+    "label": "Keith Mestrich · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/mestrich",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "ereli": {
+    "label": "J. Adam Ereli · archived biography",
+    "href": "https://web.archive.org/web/20241029092132/https://www.roselakecap.com/ereli",
+    "kind": "Archived firm website",
+    "group": "Archived team"
+  },
+  "committees": {
+    "label": "Omar’s current committee assignments",
+    "href": "https://omar.house.gov/about/committees-and-caucuses",
+    "kind": "Official biography",
+    "group": "Reporting and responses"
+  },
+  "workingGroup": {
+    "label": "U.S.-Africa Policy Working Group",
+    "href": "https://omar.house.gov/issues/us-africa-policy-working-group",
+    "kind": "Official congressional page",
+    "group": "Reporting and responses"
+  }
+} as const satisfies Record<string, Source>;
+export type SourceId = keyof typeof sources;
+export const sourceGroups: SourceGroup[] = ["Disclosures", "Court and campaign records", "Archived team", "Reporting and responses", "Mining appendix"];
+export const sections = [
+  {
+    "id": "overview",
+    "label": "Overview"
+  },
+  {
+    "id": "status",
+    "label": "Status"
+  },
+  {
+    "id": "transfers",
+    "label": "$11.25M Wires"
+  },
+  {
+    "id": "papertiger",
+    "label": "Disclosures"
+  },
+  {
+    "id": "players",
+    "label": "The Network"
+  },
+  {
+    "id": "money",
+    "label": "Campaign Money"
+  },
+  {
+    "id": "redflags",
+    "label": "Litigation"
+  },
+  {
+    "id": "conflict",
+    "label": "Questions"
+  },
+  {
+    "id": "sources",
+    "label": "Sources"
+  }
+];
+export interface Disclosure { id: string; year: string; asset: string; value: string; income: string; filed: string; sourceId: SourceId; status: "Historical" | "Superseded" | "Amended" | "Latest annual" }
+export const financialData: Disclosure[] = [
+  {
+    "id": "annual2022-0",
+    "year": "2022",
+    "filed": "May 15, 2023",
+    "sourceId": "annual2022",
+    "status": "Historical",
+    "asset": "Rose Lake Capital LLC",
+    "value": "$1–$1,000",
+    "income": "None"
+  },
+  {
+    "id": "annual2022-1",
+    "year": "2022",
+    "filed": "May 15, 2023",
+    "sourceId": "annual2022",
+    "status": "Historical",
+    "asset": "eStCru LLC",
+    "value": "$50,001–$100,000",
+    "income": "None"
+  },
+  {
+    "id": "annual2023-0",
+    "year": "2023 · original",
+    "filed": "May 14, 2024",
+    "sourceId": "annual2023",
+    "status": "Superseded",
+    "asset": "Rose Lake Capital LLC",
+    "value": "$1–$1,000",
+    "income": "$15,001–$50,000"
+  },
+  {
+    "id": "annual2023-1",
+    "year": "2023 · original",
+    "filed": "May 14, 2024",
+    "sourceId": "annual2023",
+    "status": "Superseded",
+    "asset": "eStCru LLC",
+    "value": "$15,001–$50,000",
+    "income": "$201–$1,000"
+  },
+  {
+    "id": "amendment2023-0",
+    "year": "2023 · amended",
+    "filed": "March 26, 2026",
+    "sourceId": "amendment2023",
+    "status": "Amended",
+    "asset": "Rose Lake Capital LLC",
+    "value": "None",
+    "income": "$15,001–$50,000"
+  },
+  {
+    "id": "amendment2023-1",
+    "year": "2023 · amended",
+    "filed": "March 26, 2026",
+    "sourceId": "amendment2023",
+    "status": "Amended",
+    "asset": "eStCru LLC",
+    "value": "None",
+    "income": "$2,501–$5,000"
+  },
+  {
+    "id": "original-0",
+    "year": "2024 · original",
+    "filed": "May 14, 2025",
+    "sourceId": "original",
+    "status": "Superseded",
+    "asset": "Rose Lake Capital LLC",
+    "value": "$5,000,001–$25,000,000",
+    "income": "None"
+  },
+  {
+    "id": "original-1",
+    "year": "2024 · original",
+    "filed": "May 14, 2025",
+    "sourceId": "original",
+    "status": "Superseded",
+    "asset": "eStCru LLC",
+    "value": "$1,000,001–$5,000,000",
+    "income": "$5,001–$15,000"
+  },
+  {
+    "id": "amendment-0",
+    "year": "2024 · amended",
+    "filed": "March 26, 2026",
+    "sourceId": "amendment",
+    "status": "Amended",
+    "asset": "Rose Lake Capital LLC",
+    "value": "None",
+    "income": "$100,001–$1,000,000"
+  },
+  {
+    "id": "amendment-1",
+    "year": "2024 · amended",
+    "filed": "March 26, 2026",
+    "sourceId": "amendment",
+    "status": "Amended",
+    "asset": "eStCru LLC",
+    "value": "None",
+    "income": "$2,501–$5,000"
+  },
+  {
+    "id": "annual-0",
+    "year": "2025",
+    "filed": "May 13, 2026",
+    "sourceId": "annual",
+    "status": "Latest annual",
+    "asset": "Rose Lake Capital LLC",
+    "value": "None",
+    "income": "None"
+  },
+  {
+    "id": "annual-1",
+    "year": "2025",
+    "filed": "May 13, 2026",
+    "sourceId": "annual",
+    "status": "Latest annual",
+    "asset": "eStCru LLC",
+    "value": "None",
+    "income": "$201–$1,000"
+  }
+];
+export interface Person { name: string; role: string; description: string; sourceIds: SourceId[] }
+export const partners: Person[] = [
+  {
+    "name": "Will Hailer",
+    "role": "Co-founder, CEO & partner",
+    "description": "Former senior adviser to the DNC chairman and executive director of the Texas Democratic Party. His court declaration identifies him as Rose Lake Inc.’s CEO.",
+    "sourceIds": [
+      "hailerBio",
+      "declaration"
+    ]
+  },
+  {
+    "name": "Tim Mynett",
+    "role": "Co-founder & partner",
+    "description": "Omar’s spouse and former E Street Group partner. Her disclosures list his Rose Lake Capital LLC interest and partnership income.",
+    "sourceIds": [
+      "mynettBio",
+      "amendment"
+    ]
+  },
+  {
+    "name": "Alex Hoffman",
+    "role": "Co-founder & partner",
+    "description": "Founder of C-Street Strategies; formerly DNC chief of staff to the National Finance Chair and deputy chief of staff for finance.",
+    "sourceIds": [
+      "hoffman"
+    ]
+  },
+  {
+    "name": "Justin Pratt",
+    "role": "Partner",
+    "description": "Nebraska legislative aide with a law degree and a background at Charles Schwab, LinkedIn and Berkshire Hathaway, according to the archived biography.",
+    "sourceIds": [
+      "pratt"
+    ]
+  },
+  {
+    "name": "Sheila Healy",
+    "role": "Partner",
+    "description": "Former Arizona Democratic Party executive director, Obama campaign operative and adviser to Bernie Sanders, according to the archived biography.",
+    "sourceIds": [
+      "healy"
+    ]
+  }
+];
+export const advisors: Person[] = [
+  {
+    "name": "Keith Mestrich",
+    "role": "Advisory chairman",
+    "description": "Former CEO of Amalgamated Bank, listed as Rose Lake’s advisory chairman in the 2024 archive.",
+    "sourceIds": [
+      "mestrich"
+    ]
+  },
+  {
+    "name": "Bill Quesada Derrough",
+    "role": "Advisor",
+    "description": "Listed with Moelis in the 2024 archive. Jefferies announced his return as Managing Director and Chairman of Global Debt Advisory & Restructuring in February 2026.",
+    "sourceIds": [
+      "team",
+      "derrough"
+    ]
+  },
+  {
+    "name": "J. Adam Ereli",
+    "role": "Advisor",
+    "description": "Former U.S. ambassador to Bahrain. His archived biography also lists international lobbying work at Mercury Public Affairs.",
+    "sourceIds": [
+      "ereli"
+    ]
+  },
+  {
+    "name": "Max Baucus",
+    "role": "Listed advisor",
+    "description": "Former senator, Senate Finance chairman and ambassador to China. He later described a proposed storage-unit deal with Hailer that did not materialize, according to reporting.",
+    "sourceIds": [
+      "team",
+      "followup"
+    ]
+  },
+  {
+    "name": "J. Peter Pham",
+    "role": "Advisor",
+    "description": "Former U.S. special envoy for Africa’s Great Lakes and Sahel regions. Ivanhoe Atlantic now lists him as Executive Chairman & Interim CEO.",
+    "sourceIds": [
+      "team",
+      "ivanhoe"
+    ]
+  }
+];
+export const timeline: { date: string; title: string; text: string; sourceId: SourceId }[] = [
+  {
+    "date": "June 21, 2024",
+    "title": "$10 million arrives",
+    "text": "Hailer’s declaration describes an incoming wire to Rose Lake Inc. from OCI Limited through Barclays in the UK.",
+    "sourceId": "declaration"
+  },
+  {
+    "date": "July 2024 · reporting",
+    "title": "Cannabis debt paid",
+    "text": "Follow-up reporting dates the final $1.2 million payoff to July. A payment account or receipt connecting it to OCI was not recovered.",
+    "sourceId": "followup"
+  },
+  {
+    "date": "July 25, 2024",
+    "title": "Another $1.25 million",
+    "text": "The second incoming wire is described in the same sworn declaration.",
+    "sourceId": "declaration"
+  },
+  {
+    "date": "Mid-October 2024",
+    "title": "Return instruction",
+    "text": "Hailer says Byju told him to return $11.25 million through Divya Gokulnath’s account. The declaration does not say that he completed it.",
+    "sourceId": "declaration"
+  },
+  {
+    "date": "March 21, 2025",
+    "title": "Twelve banks targeted",
+    "text": "Lenders’ subpoena notice requests transaction records, with Rose Lake and Hailer among the search terms. The linked reproduction was filed April 23.",
+    "sourceId": "subpoenas"
+  },
+  {
+    "date": "May 5, 2025",
+    "title": "Lenders challenge the transfers",
+    "text": "The OCI complaint’s paragraphs 105–107 allege the wires may have financed a loan buyback with Alpha funds. This is the lenders’ theory.",
+    "sourceId": "ociComplaint"
+  },
+  {
+    "date": "October 29, 2025",
+    "title": "Claims preserved",
+    "text": "The confirmed Alpha plan names Hailer as excluded party 69 and preserves claims against excluded parties. It does not decide liability.",
+    "sourceId": "plan"
+  }
+];
+export const updates: { date: string; isoDate: string; title: string; kind: string; text: string; sourceIds: SourceId[] }[] = [
+  {
+    "date": "October 13, 2026",
+    "isoDate": "2026-10-13",
+    "title": "Pirro announces financial-disclosure investigation",
+    "kind": "Public announcement",
+    "text": "U.S. Attorney Jeanine Pirro said her office is investigating Omar’s financial disclosures. Her interview and the reporting are linked below. The home search reported the previous day concerns a separate matter.",
+    "sourceIds": [
+      "pirro",
+      "federal"
+    ]
+  },
+  {
+    "date": "September 9, 2026",
+    "isoDate": "2026-09-09",
+    "title": "OCC recommends dismissal in a 5–1 vote",
+    "kind": "Reported watchdog action",
+    "text": "The Star Tribune reported the Office of Congressional Conduct’s recommendation to dismiss the disclosure allegations; the Wall Street Journal said it reviewed confidential findings. A final House Ethics disposition was not located in this review. This recommendation does not account for the destination of the Rose Lake wires.",
+    "sourceIds": [
+      "watchdogVote",
+      "watchdog"
+    ]
+  },
+  {
+    "date": "May 13, 2026",
+    "isoDate": "2026-05-13",
+    "title": "2025 annual filing lists both business values as None",
+    "kind": "House disclosure",
+    "text": "Filing 10077400 lists no Rose Lake partnership income and $201–$1,000 from eStCru for calendar year 2025. These figures cover a different year from the amended 2024 income.",
+    "sourceIds": [
+      "annual"
+    ]
+  },
+  {
+    "date": "April 4, 2026",
+    "isoDate": "2026-04-04",
+    "title": "eStCru files its certificate of cancellation",
+    "kind": "California filing",
+    "text": "The reproduced filing, BA20260753835, is signed by William R. Hailer and states that all members approved dissolution. It was filed nine days after the disclosure amendments.",
+    "sourceIds": [
+      "winery"
+    ]
+  },
+  {
+    "date": "March 26, 2026",
+    "isoDate": "2026-03-26",
+    "title": "Two years of business disclosures amended",
+    "kind": "House disclosures",
+    "text": "Both the 2023 and 2024 reports were amended. Both business asset values become None in each amendment. The 2023 eStCru income changes to $2,501–$5,000; the 2024 Rose Lake income becomes $100,001–$1,000,000. Both original reports remain linked for comparison.",
+    "sourceIds": [
+      "annual2023",
+      "amendment2023",
+      "original",
+      "amendment"
+    ]
+  },
+  {
+    "date": "February 5, 2026",
+    "isoDate": "2026-02-05",
+    "title": "Comer demands Mynett’s company records",
+    "kind": "Congressional letter",
+    "text": "The letter to Timothy Mynett requests audited financial statements, regulatory filings and business-travel records involving the UAE, Somalia and Kenya, with a February 19 deadline. No production or noncompliance finding is asserted here.",
+    "sourceIds": [
+      "oversight"
+    ]
+  },
+  {
+    "date": "November 20, 2024",
+    "isoDate": "2024-11-20",
+    "title": "Hailer swears to the Rose Lake transfer account",
+    "kind": "Historical sworn statement",
+    "text": "Epic! Creations docket 314 describes the two wires, OCI as sender and the requested return route. Added to this publication October 13, 2026. The main report now includes the later bank subpoenas and plan reserving claims.",
+    "sourceIds": [
+      "declaration",
+      "subpoenas",
+      "plan"
+    ]
+  }
 ];
