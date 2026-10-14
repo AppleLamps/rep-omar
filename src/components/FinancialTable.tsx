@@ -12,7 +12,7 @@ export default function FinancialTable() {
         <p className="mt-3 text-xs text-slate-600">Filed {row.filed}</p><p className="mt-2 text-xs"><SourceLink id={row.sourceId}>Read the filing</SourceLink></p>
       </article>)}
     </div>
-    <div role="region" aria-label="Disclosure comparison, horizontally scrollable" aria-describedby="disclosure-table-description" tabIndex={0} className="disclosure-desktop hidden overflow-x-auto rounded-xl border border-slate-200 sm:block">
+    <div role="region" aria-label="Disclosure comparison, horizontally scrollable" aria-describedby="disclosure-table-description" tabIndex={0} className="disclosure-desktop relative hidden overflow-x-auto rounded-xl border border-slate-200 sm:block">
       <table className="w-full min-w-[900px] text-sm">
         <caption className="sr-only">Spouse business asset values and partnership income, with original and amended disclosures</caption>
         <thead className="bg-slate-900 text-white"><tr>{["Calendar year", "Asset", "Reported value", "Partnership income", "Filing / status"].map(label => <th key={label} scope="col" className="px-4 py-4 text-left font-semibold">{label}</th>)}</tr></thead>
