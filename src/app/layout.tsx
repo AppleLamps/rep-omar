@@ -19,5 +19,5 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", creator: "@lamps_apple", title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "A conservative investigation with primary records and documented responses." },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body className={inter.variable + " " + display.variable + " antialiased"}><SiteFrame>{children}<Footer /></SiteFrame></body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body className={inter.variable + " " + display.variable + " antialiased"}><SiteFrame>{children}<Footer /></SiteFrame></body></html>;
 }

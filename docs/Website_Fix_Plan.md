@@ -1,5 +1,7 @@
 # Final website repair plan
 
+Implementation status: published October 14, 2026 through [repair PR #8](https://github.com/AppleLamps/rep-omar/pull/8). See [Website_Repair_Validation.md](Website_Repair_Validation.md) for the completed checks and their limits. The baseline review below is retained as the verification ledger.
+
 Prepared October 13, 2026 (America/New_York). Reviewed live homepage and `/updates`, all application source files, the attached investigation report, and the records cited below. Repository baseline: `562ba8431c22c550706626ecbb35d98ff4ce0f7b`.
 
 This document specifies the implementation. Application code and production have not been changed during this review. Earlier research notes in `docs/` contain assumptions and superseded instructions; they must not override this verification ledger.
