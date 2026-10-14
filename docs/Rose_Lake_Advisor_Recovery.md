@@ -1,3 +1,5 @@
+> Historical research note. Some claims and implementation instructions are superseded. Use [Website_Fix_Plan.md](Website_Fix_Plan.md) and the cited source records before incorporating material into the live site.
+
 # Rose Lake Capital — Wayback Recovery of Scrubbed Advisor Roster
 
 **Subject:** Rose Lake Inc. (roselakecap.com), the private capital firm co-founded by Tim Mynett, husband of Rep. Ilhan Omar (D-MN-05).

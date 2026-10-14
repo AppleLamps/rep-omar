@@ -1,3 +1,5 @@
+> Historical research note. Some claims and implementation instructions are superseded. Use [Website_Fix_Plan.md](Website_Fix_Plan.md) and the cited source records before incorporating material into the live site.
+
 # Rose Lake Phase 3: Delaware Entity Map + Two FOIA Drafts
 
 **Companion to:** `Rose_Lake_Advisor_Recovery.md` and `Rose_Lake_Deep_Research.md`

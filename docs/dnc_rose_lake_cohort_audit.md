@@ -1,3 +1,5 @@
+> Historical research note. Some claims and implementation instructions are superseded. Use [Website_Fix_Plan.md](Website_Fix_Plan.md) and the cited source records before incorporating material into the live site.
+
 # DNC Disbursements 2017-2021: Rose Lake Cohort Vendor Audit
 
 **Target committees:** DNC Services Corp./Democratic National Committee (C00010603) and related Democratic party committees

@@ -1,3 +1,5 @@
+> Historical research note. Some claims and implementation instructions are superseded. Use [Website_Fix_Plan.md](Website_Fix_Plan.md) and the cited source records before incorporating material into the live site.
+
 # Omar — Subsurface OSINT Brief
 
 **Prepared:** April 18, 2026

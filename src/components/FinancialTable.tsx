@@ -1,62 +1,25 @@
 import { financialData } from "@/lib/investigation";
+import SourceLink from "./SourceLink";
 
 export default function FinancialTable() {
-  return (
-    <>
-      {/* Mobile-friendly card view for small screens */}
-      <div className="sm:hidden space-y-4">
-        {financialData.map((row, idx) => (
-          <div key={idx} className={`rounded-xl p-4 border ${row.highlight ? "bg-red-50 border-red-200" : "bg-white border-slate-200"}`}>
-            <div className="flex justify-between items-start mb-2">
-              <span className="font-semibold text-slate-900">{row.asset}</span>
-              <span className="text-slate-500 text-sm">{row.year}</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              <div>
-                <span className="text-slate-500">Value: </span>
-                <span className={row.highlight ? "font-bold text-red-600" : "text-slate-700"}>{row.value}</span>
-              </div>
-              <div>
-                <span className="text-slate-500">Income: </span>
-                <span className="text-slate-700">{row.income}</span>
-              </div>
-              <div className="col-span-2">
-                <span className="text-slate-500">Type: </span>
-                <span className="text-slate-700">{row.type}</span>
-              </div>
-            </div>
-            <p className={`text-sm mt-2 ${row.highlight ? "font-semibold text-red-600" : "text-slate-500 italic"}`}>{row.analysis}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop table view */}
-      <div role="region" aria-label="Congressional financial disclosures; scroll horizontally for more columns" tabIndex={0} className="hidden sm:block overflow-x-auto rounded-xl border border-slate-200">
-        <table className="w-full min-w-[800px]">
-          <thead>
-            <tr className="bg-slate-900 text-white">
-              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Year</th>
-              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Asset</th>
-              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Value Range</th>
-              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Income</th>
-              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Type</th>
-              <th scope="col" className="px-6 py-4 text-left text-sm font-semibold">Analysis</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-200">
-            {financialData.map((row, idx) => (
-              <tr key={idx} className={row.highlight ? "bg-red-50" : idx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                <td className="px-6 py-4 text-sm text-slate-600">{row.year}</td>
-                <td className="px-6 py-4 text-sm text-slate-900 font-medium">{row.asset}</td>
-                <td className={`px-6 py-4 text-sm ${row.highlight ? "font-bold text-red-600" : "text-slate-600"}`}>{row.value}</td>
-                <td className="px-6 py-4 text-sm text-slate-600">{row.income}</td>
-                <td className="px-6 py-4 text-sm text-slate-600">{row.type}</td>
-                <td className={`px-6 py-4 text-sm ${row.highlight ? "font-semibold text-red-600" : "text-slate-500 italic"}`}>{row.analysis}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
-  );
+  return <>
+    <p id="disclosure-table-description" className="mb-5 text-sm leading-6 text-slate-600">Calendar-year entries for spouse-owned assets (SP). Income type: partnership income. “None” is the form’s entry. The original 2023 and 2024 figures are superseded; each remains visible for comparison.</p>
+    <div className="disclosure-mobile space-y-4 sm:hidden">
+      {financialData.map(row => <article key={row.id} className={"rounded-xl border p-4 " + (row.status === "Amended" ? "border-red-200 bg-red-50" : "border-slate-200 bg-white")}>
+        <div className="flex flex-wrap items-start justify-between gap-2"><h4 className="font-semibold text-slate-900">{row.asset}</h4><span className="text-xs font-semibold text-slate-600">{row.status}</span></div>
+        <p className="mt-2 text-sm font-bold text-red-800">{row.year}</p>
+        <dl className="mt-3 space-y-2 text-sm"><div><dt className="inline text-slate-600">Reported asset value: </dt><dd className="inline font-semibold text-slate-900">{row.value}</dd></div><div><dt className="inline text-slate-600">Partnership income: </dt><dd className="inline text-slate-900">{row.income}</dd></div></dl>
+        <p className="mt-3 text-xs text-slate-600">Filed {row.filed}</p><p className="mt-2 text-xs"><SourceLink id={row.sourceId}>Read the filing</SourceLink></p>
+      </article>)}
+    </div>
+    <div role="region" aria-label="Disclosure comparison, horizontally scrollable" aria-describedby="disclosure-table-description" tabIndex={0} className="disclosure-desktop hidden overflow-x-auto rounded-xl border border-slate-200 sm:block">
+      <table className="w-full min-w-[900px] text-sm">
+        <caption className="sr-only">Spouse business asset values and partnership income, with original and amended disclosures</caption>
+        <thead className="bg-slate-900 text-white"><tr>{["Calendar year", "Asset", "Reported value", "Partnership income", "Filing / status"].map(label => <th key={label} scope="col" className="px-4 py-4 text-left font-semibold">{label}</th>)}</tr></thead>
+        <tbody className="divide-y divide-slate-200">{financialData.map(row => <tr key={row.id} className={row.status === "Amended" ? "bg-red-50" : "bg-white"}>
+          <th scope="row" className="px-4 py-4 text-left font-semibold">{row.year}</th><td className="px-4 py-4">{row.asset}</td><td className="px-4 py-4 font-semibold text-slate-900">{row.value}</td><td className="px-4 py-4">{row.income}</td><td className="px-4 py-4"><span className="block text-xs font-semibold text-slate-700">{row.status} · {row.filed}</span><SourceLink id={row.sourceId}>Read filing</SourceLink></td>
+        </tr>)}</tbody>
+      </table>
+    </div>
+  </>;
 }

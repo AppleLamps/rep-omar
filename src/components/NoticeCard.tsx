@@ -12,7 +12,7 @@ interface NoticeCardProps {
 
 export default function NoticeCard({ id, title, children, action, footer, variant = "legal", compact = false }: NoticeCardProps) {
   return (
-    <section aria-labelledby={`${id}-title`} className={`relative rounded-xl border bg-white px-4 sm:px-6 print:border-slate-300 ${compact ? "py-3" : "py-4 sm:py-6"} ${variant === "update" ? "border-amber-300" : "border-slate-200"}`}>
+    <section id={id} aria-labelledby={`${id}-title`} className={`relative rounded-xl border bg-white px-4 sm:px-6 print:border-slate-300 ${compact ? "py-3" : "py-4 sm:py-6"} ${variant === "update" ? "border-amber-300" : "border-slate-200"}`}>
       <div className="grid grid-cols-[2.25rem_minmax(0,1fr)] items-start gap-x-3 sm:gap-x-4">
         <div aria-hidden="true" className={`flex h-9 w-9 items-center justify-center rounded-lg ${variant === "update" ? "bg-amber-100 text-amber-800" : "bg-slate-100 text-slate-600"}`}>
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

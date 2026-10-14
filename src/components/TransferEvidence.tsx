@@ -1,31 +1,36 @@
-import { sources } from "@/lib/investigation";
+import { timeline } from "@/lib/investigation";
+import ReportSection from "./ReportSection";
+import SourceLink, { Citations } from "./SourceLink";
 
 export default function TransferEvidence() {
-  return (
-    <section id="transfers" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
-      <div className="max-w-5xl mx-auto">
-        <p className="text-red-300 text-sm font-semibold uppercase tracking-wide mb-3">Court-record lead · Reviewed October 13, 2026</p>
-        <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">The $11.25 Million Transfer</h2>
-        <p className="text-slate-300 mb-8 max-w-3xl">Hailer&apos;s November 20, 2024 declaration describes two incoming wires to Rose Lake Inc. in connection with an attempted acquisition of Byju&apos;s Term Loan B.</p>
-        <div className="grid sm:grid-cols-2 gap-4 mb-6">
-          {[{ date: "June 21, 2024", amount: "$10,000,000" }, { date: "July 25, 2024", amount: "$1,250,000" }].map(wire => (
-            <div key={wire.date} className="rounded-2xl bg-white/5 border border-white/15 p-6">
-              <p className="text-slate-300 text-sm mb-2">{wire.date}</p>
-              <p className="text-3xl font-bold text-red-300">{wire.amount}</p>
-              <p className="text-slate-300 text-sm mt-2">Incoming wire described by Hailer</p>
-            </div>
-          ))}
-        </div>
-        <div className="space-y-4 text-slate-300 leading-relaxed">
-          <p>He identifies the sender as <strong className="text-white">OCI Limited through Barclays in the UK</strong>. The funds were documented as a loan, represented to him as a fee, and later demanded back. He says Byju Raveendran instructed him to route the return through his wife Divya Gokulnath&apos;s account.</p>
-          <p>These are Hailer&apos;s sworn statements. The declaration does not establish that the requested outbound transfer occurred or that Mynett personally received these funds. Rose Lake Inc. and the disclosed Rose Lake Capital LLC are separate named entities; their intercompany transactions require documentation.</p>
-        </div>
-        <a href={sources.declaration.href} target="_blank" rel="noopener noreferrer" className="inline-block mt-6 text-red-300 underline underline-offset-4">Read docket 314, pages 4–6 and 13–14 (PDF)</a>
-        <p className="mt-5 text-sm text-slate-300">By August 1, 2024, reporting documented a final $1.2 million cannabis settlement payment by Hailer. Its timing follows the wires, but the reviewed documents do not connect the settlement to those funds. <a href={sources.settlements.href} target="_blank" rel="noopener noreferrer" className="text-red-300 underline">Settlement reporting</a>.</p>
-        <div className="mt-8 rounded-xl border border-amber-400/30 bg-amber-400/10 p-5 text-sm text-amber-100">
-          <strong>Next documentary questions:</strong> Where did the money go? Was it returned, retained or moved between entities? What was the source of Mynett&apos;s separately disclosed 2024 partnership income? Bank statements and transaction records are needed to answer these questions.
-        </div>
+  return <ReportSection id="transfers" eyebrow="The court-record trail" title="$11.25 million. Two wires. Where did it go?" intro="Hailer’s sworn account puts millions into Rose Lake Inc. The records below show why the transfer deserves scrutiny and what the lenders pursued." dark>
+    <div className="grid gap-4 sm:grid-cols-2">
+      {[{ date: "June 21, 2024", value: "$10,000,000" }, { date: "July 25, 2024", value: "$1,250,000" }].map(wire => <article key={wire.date} className="rounded-2xl border border-red-400/40 bg-red-900/20 p-5 sm:p-7">
+        <p className="text-sm font-semibold text-red-200">{wire.date}</p><p className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{wire.value}</p><p className="mt-3 text-sm text-slate-300">OCI Limited → Rose Lake Inc. · per Hailer</p>
+      </article>)}
+    </div>
+    <div className="mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-200">
+      <p>Hailer identifies <strong className="text-white">OCI Limited’s Barclays account in the UK</strong> as the sender. He describes money documented as a loan and represented to Rose Lake as a fee for an attempted purchase of Byju’s Term Loan B.</p>
+      <p>He later says Byju Raveendran directed him to return the entire amount through <strong className="text-white">Divya Gokulnath’s account</strong>. His declaration never says that return was completed. It does not trace a payment to Mynett.</p>
+      <p className="text-sm"><SourceLink id="declaration" page={4} light>Declaration, pages 4–6</SourceLink><span className="mx-3" aria-hidden="true">·</span><SourceLink id="declaration" page={13} light>Return instruction, pages 13–14</SourceLink></p>
+    </div>
+    <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <article className="evidence-card"><p className="eyebrow text-red-200">Bank records</p><h3 className="mt-3 text-lg font-bold">Twelve banks targeted</h3><p className="mt-3 text-sm leading-6 text-slate-300">The lenders’ March 2025 subpoena notice seeks transaction records using Rose Lake and Hailer as search terms.</p><Citations ids={["subpoenas"]} light /></article>
+      <article className="evidence-card"><p className="eyebrow text-red-200">Lenders’ allegation</p><h3 className="mt-3 text-lg font-bold">Possible Alpha-funds financing</h3><p className="mt-3 text-sm leading-6 text-slate-300">The OCI complaint connects the transfer account to an alleged secretive loan buyback and questions the source of funds.</p><Citations ids={["ociComplaint"]} light /></article>
+      <article className="evidence-card"><p className="eyebrow text-red-200">Confirmed plan</p><h3 className="mt-3 text-lg font-bold">Claims against Hailer preserved</h3><p className="mt-3 text-sm leading-6 text-slate-300">The October 2025 plan names Hailer as excluded party 69. Preserving claims leaves the right to pursue them; it does not decide liability.</p><Citations ids={["plan"]} light /></article>
+    </div>
+    <details className="mt-8 rounded-xl border border-slate-700">
+      <summary className="cursor-pointer px-5 py-4 text-sm font-semibold">Read the seven-event transfer and litigation timeline</summary>
+      <ol className="border-t border-slate-700 px-5 py-6 sm:px-7">{timeline.map(event => <li key={event.title} className="relative border-l border-slate-600 pb-7 pl-6 last:pb-0"><span aria-hidden="true" className="absolute -left-[5px] top-1 h-2 w-2 rounded-full bg-red-400" /><p className="text-xs font-semibold text-red-200">{event.date}</p><h3 className="mt-1 font-bold">{event.title}</h3><p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">{event.text}</p><Citations ids={[event.sourceId]} light /></li>)}</ol>
+    </details>
+    <details className="mt-4 rounded-xl border border-slate-700">
+      <summary className="cursor-pointer px-5 py-4 text-sm font-semibold">OCI’s accounting and its response</summary>
+      <div className="space-y-4 border-t border-slate-700 px-5 py-5 text-sm leading-6 text-slate-300">
+        <p>Oliver Chapman’s November 2025 declaration accounts for about $505.9 million received by OCI. Most listed outflows are dated in 2022; a $13.1 million item directed by Rupin Banker has no transaction date. It does not name Rose Lake or trace the 2024 wires.</p>
+        <p>The accompanying settlement motion proposes releasing OCI and Chapman and continuing claims against Banker. OCI’s February 2026 statement says approval occurred January 23 and that the company was released. The approval date here is attributed to OCI; the separate order was not recovered.</p>
+        <Citations ids={["chapman", "oci"]} light />
       </div>
-    </section>
-  );
+    </details>
+    <aside className="mt-8 rounded-xl border-l-4 border-red-500 bg-white/5 p-5"><p className="text-sm font-semibold text-white">The central demand: release the bank trail.</p><p className="mt-2 text-sm leading-6 text-slate-300">The incoming wires, any return and any intercompany payments should be reconciled with transaction records. The amended partnership-income bracket does not supply that trail.</p></aside>
+  </ReportSection>;
 }
