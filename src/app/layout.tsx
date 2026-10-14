@@ -11,12 +11,12 @@ const display = Playfair_Display({ subsets: ["latin"], weight: "700", display: "
 export const metadata: Metadata = {
   metadataBase: new URL(siteURL),
   title: { default: "Ilhan Omar, Tim Mynett & the Money Trail | Follow The Money", template: "%s | Follow The Money" },
-  description: "A conservative investigation into Omar and Mynett’s business network, rewritten disclosures, campaign payments and the $11.25 million Rose Lake transfer account.",
+  description: "Omar revised millions in reported business values and added substantial Rose Lake income. The disclosures, political network and separate $11.25 million wire account.",
   authors: [{ name: "Apple Lamps", url: "https://x.com/lamps_apple" }],
   alternates: { canonical: "/" },
   robots: { index: process.env.VERCEL_ENV !== "preview", follow: true },
-  openGraph: { title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "Rewritten disclosures. Political connections. $11.25 million in wires. Follow the records with Apple Lamps.", type: "website", url: "/", siteName: "Follow The Money", locale: "en_US" },
-  twitter: { card: "summary_large_image", creator: "@lamps_apple", title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "A conservative investigation with primary records and documented responses." },
+  openGraph: { title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "Omar’s revised business valuations, newly reported Rose Lake income and her husband’s political-business network.", type: "website", url: "/", siteName: "Follow The Money", locale: "en_US" },
+  twitter: { card: "summary_large_image", creator: "@lamps_apple", title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "The disclosure reversal, the political-business network and Hailer’s sworn account of $11.25 million in wires." },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="en" data-scroll-behavior="smooth"><body className={inter.variable + " " + display.variable + " antialiased"}><SiteFrame>{children}<Footer /></SiteFrame></body></html>;

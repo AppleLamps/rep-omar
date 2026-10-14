@@ -3,7 +3,7 @@ import SourceLink from "./SourceLink";
 
 export default function FinancialTable() {
   return <>
-    <p id="disclosure-table-description" className="mb-5 text-sm leading-6 text-slate-600">Calendar-year entries for spouse-owned assets (SP). Income type: partnership income. “None” is the form’s entry. The original 2023 and 2024 figures are superseded; each remains visible for comparison.</p>
+    <p id="disclosure-table-description" className="mb-5 text-sm leading-6 text-slate-600">Omar’s filings list these as spouse-owned assets (SP) and classify the income as partnership income. “None” reproduces the form’s wording. The amendments replace the original 2023 and 2024 entries.</p>
     <div className="disclosure-mobile space-y-4 sm:hidden">
       {financialData.map(row => <article key={row.id} className={"rounded-xl border p-4 " + (row.status === "Amended" ? "border-red-200 bg-red-50" : "border-slate-200 bg-white")}>
         <div className="flex flex-wrap items-start justify-between gap-2"><h4 className="font-semibold text-slate-900">{row.asset}</h4><span className="text-xs font-semibold text-slate-600">{row.status}</span></div>

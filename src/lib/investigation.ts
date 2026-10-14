@@ -1,7 +1,7 @@
 export const reviewedDate = "October 13, 2026";
 export const reviewedISODate = "2026-10-13";
 export const siteURL = "https://rep-omar.vercel.app";
-export const socialImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "Follow The Money: a conservative investigation by Apple Lamps" };
+export const socialImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "Follow The Money: Ilhan Omar, Tim Mynett and the Money Trail, by Apple Lamps" };
 
 export type SourceGroup = "Disclosures" | "Court and campaign records" | "Archived team" | "Reporting and responses" | "Mining appendix";
 export interface Source { label: string; href: string; kind: string; group: SourceGroup; date?: string }
@@ -302,16 +302,12 @@ export const sections = [
     "label": "Overview"
   },
   {
-    "id": "status",
-    "label": "Status"
+    "id": "papertiger",
+    "label": "Disclosures"
   },
   {
     "id": "transfers",
     "label": "$11.25M Wires"
-  },
-  {
-    "id": "papertiger",
-    "label": "Disclosures"
   },
   {
     "id": "players",
@@ -324,6 +320,10 @@ export const sections = [
   {
     "id": "redflags",
     "label": "Litigation"
+  },
+  {
+    "id": "status",
+    "label": "Status"
   },
   {
     "id": "conflict",
@@ -551,43 +551,37 @@ export const timeline: { date: string; title: string; text: string; sourceId: So
   {
     "date": "June 21, 2024",
     "title": "$10 million arrives",
-    "text": "Hailer’s declaration describes an incoming wire to Rose Lake Inc. from OCI Limited through Barclays in the UK.",
+    "text": "OCI Limited wired $10 million from its Barclays account in the UK to Rose Lake Inc., according to Hailer’s sworn declaration.",
     "sourceId": "declaration"
-  },
-  {
-    "date": "July 2024 · reporting",
-    "title": "Cannabis debt paid",
-    "text": "Follow-up reporting dates the final $1.2 million payoff to July. A payment account or receipt connecting it to OCI was not recovered.",
-    "sourceId": "followup"
   },
   {
     "date": "July 25, 2024",
     "title": "Another $1.25 million",
-    "text": "The second incoming wire is described in the same sworn declaration.",
+    "text": "Hailer describes a second OCI wire to Rose Lake Inc., bringing the total to $11.25 million.",
     "sourceId": "declaration"
   },
   {
     "date": "Mid-October 2024",
     "title": "Return instruction",
-    "text": "Hailer says Byju told him to return $11.25 million through Divya Gokulnath’s account. The declaration does not say that he completed it.",
+    "text": "Hailer says Byju Raveendran instructed him to return $11.25 million through Divya Gokulnath’s account. His declaration does not confirm a completed repayment.",
     "sourceId": "declaration"
   },
   {
     "date": "March 21, 2025",
     "title": "Twelve banks targeted",
-    "text": "Lenders’ subpoena notice requests transaction records, with Rose Lake and Hailer among the search terms. The linked reproduction was filed April 23.",
+    "text": "The lenders’ subpoena notice sought transaction records using Rose Lake and Hailer among its search terms. The notice was reproduced in an April 23 filing.",
     "sourceId": "subpoenas"
   },
   {
     "date": "May 5, 2025",
     "title": "Lenders challenge the transfers",
-    "text": "The OCI complaint’s paragraphs 105–107 allege the wires may have financed a loan buyback with Alpha funds. This is the lenders’ theory.",
+    "text": "Paragraphs 105–107 of the OCI complaint allege that the wires may have financed a loan buyback with Alpha funds.",
     "sourceId": "ociComplaint"
   },
   {
     "date": "October 29, 2025",
     "title": "Claims preserved",
-    "text": "The confirmed Alpha plan names Hailer as excluded party 69 and preserves claims against excluded parties. It does not decide liability.",
+    "text": "The confirmed Alpha plan lists Hailer as excluded party 69, preserving claims against him without deciding liability.",
     "sourceId": "plan"
   }
 ];
@@ -597,7 +591,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2026-10-13",
     "title": "Pirro announces financial-disclosure investigation",
     "kind": "Public announcement",
-    "text": "U.S. Attorney Jeanine Pirro said her office is investigating Omar’s financial disclosures. Her interview and the reporting are linked below. The home search reported the previous day concerns a separate matter.",
+    "text": "U.S. Attorney Jeanine Pirro announced that her office was investigating Omar’s financial disclosures. The announcement follows the March amendments and the congressional watchdog’s September recommendation to dismiss the disclosure allegations. The home search reported on October 12 concerned a separate matter.",
     "sourceIds": [
       "pirro",
       "federal"
@@ -608,7 +602,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2026-09-09",
     "title": "OCC recommends dismissal in a 5–1 vote",
     "kind": "Reported watchdog action",
-    "text": "The Star Tribune reported the Office of Congressional Conduct’s recommendation to dismiss the disclosure allegations; the Wall Street Journal said it reviewed confidential findings. A final House Ethics disposition was not located in this review. This recommendation does not account for the destination of the Rose Lake wires.",
+    "text": "The Office of Congressional Conduct voted 5–1 to recommend dismissal of the disclosure allegations, according to the Minnesota Star Tribune. The Wall Street Journal reported reviewing the watchdog’s confidential findings. The reported action was an OCC recommendation to the House Ethics Committee.",
     "sourceIds": [
       "watchdogVote",
       "watchdog"
@@ -619,7 +613,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2026-05-13",
     "title": "2025 annual filing lists both business values as None",
     "kind": "House disclosure",
-    "text": "Filing 10077400 lists no Rose Lake partnership income and $201–$1,000 from eStCru for calendar year 2025. These figures cover a different year from the amended 2024 income.",
+    "text": "Omar’s 2025 annual report lists both business asset values as “None,” no Rose Lake partnership income and $201–$1,000 from eStCru. The filing covers calendar year 2025.",
     "sourceIds": [
       "annual"
     ]
@@ -629,7 +623,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2026-04-04",
     "title": "eStCru files its certificate of cancellation",
     "kind": "California filing",
-    "text": "The reproduced filing, BA20260753835, is signed by William R. Hailer and states that all members approved dissolution. It was filed nine days after the disclosure amendments.",
+    "text": "eStCru filed its California cancellation certificate, BA20260753835, nine days after Omar amended the disclosures. William R. Hailer signed the certificate, which states that all members approved dissolution.",
     "sourceIds": [
       "winery"
     ]
@@ -639,7 +633,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2026-03-26",
     "title": "Two years of business disclosures amended",
     "kind": "House disclosures",
-    "text": "Both the 2023 and 2024 reports were amended. Both business asset values become None in each amendment. The 2023 eStCru income changes to $2,501–$5,000; the 2024 Rose Lake income becomes $100,001–$1,000,000. Both original reports remain linked for comparison.",
+    "text": "Omar amended her 2023 and 2024 reports to list both business values as “None.” The 2024 amendment replaced the original Rose Lake income entry of “None” with $100,001–$1,000,000. The amended 2023 eStCru income rose from $201–$1,000 to $2,501–$5,000.",
     "sourceIds": [
       "annual2023",
       "amendment2023",
@@ -652,7 +646,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2026-02-05",
     "title": "Comer demands Mynett’s company records",
     "kind": "Congressional letter",
-    "text": "The letter to Timothy Mynett requests audited financial statements, regulatory filings and business-travel records involving the UAE, Somalia and Kenya, with a February 19 deadline. No production or noncompliance finding is asserted here.",
+    "text": "House Oversight Chairman James Comer demanded audited financial statements, regulatory filings and business-travel records from Timothy Mynett. The letter covered travel involving the UAE, Somalia and Kenya and set a February 19 deadline.",
     "sourceIds": [
       "oversight"
     ]
@@ -662,7 +656,7 @@ export const updates: { date: string; isoDate: string; title: string; kind: stri
     "isoDate": "2024-11-20",
     "title": "Hailer swears to the Rose Lake transfer account",
     "kind": "Historical sworn statement",
-    "text": "Epic! Creations docket 314 describes the two wires, OCI as sender and the requested return route. Added to this publication October 13, 2026. The main report now includes the later bank subpoenas and plan reserving claims.",
+    "text": "Hailer’s declaration in the Epic! Creations bankruptcy described OCI’s two wires to Rose Lake Inc., totaling $11.25 million, and a later instruction to return the money through Divya Gokulnath’s account. The declaration did not confirm a completed repayment.",
     "sourceIds": [
       "declaration",
       "subpoenas",
