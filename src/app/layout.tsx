@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Apple Lamps", url: "https://x.com/lamps_apple" }],
   alternates: { canonical: "/" },
   robots: { index: process.env.VERCEL_ENV !== "preview", follow: true },
-  openGraph: { title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "Omar’s revised business valuations, newly reported Rose Lake income and her husband’s political-business network.", type: "website", url: "/", siteName: "Follow The Money", locale: "en_US" },
-  twitter: { card: "summary_large_image", creator: "@lamps_apple", title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "The disclosure reversal, the political-business network and Hailer’s sworn account of $11.25 million in wires." },
+  openGraph: { title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "Signed disclosures, revised business valuations and Hailer’s sworn account of $11.25 million wired to Rose Lake Inc. An investigation by Apple Lamps.", type: "website", url: "/", siteName: "Follow The Money", locale: "en_US" },
+  twitter: { card: "summary_large_image", site: "@lamps_apple", creator: "@lamps_apple", title: "Ilhan Omar, Tim Mynett & the Money Trail", description: "Signed disclosures, revised business valuations and Hailer’s sworn account of $11.25 million wired to Rose Lake Inc. An investigation by Apple Lamps." },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="en" data-scroll-behavior="smooth"><body className={inter.variable + " " + display.variable + " antialiased"}><SiteFrame>{children}<Footer /></SiteFrame></body></html>;
